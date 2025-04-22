@@ -386,15 +386,30 @@ def save_to_excel(zayavka, filename):
 @app.route('/generate_report', methods=['POST'])
 @role_required('admin')
 def generate_report():
-    month = request.form.get('month', 'all')
+    import calendar
+
+    month_raw = request.form.get('month', 'all')
     query = Zayavka.query.join(User, Zayavka.user_id == User.id)
+    now = datetime.datetime.now()
 
-    if month != 'all':
-        month = int(month)
-        start = datetime.date(datetime.datetime.now().year, month, 1)
-        end = datetime.date(datetime.datetime.now().year + (month == 12), (month % 12) + 1, 1)
+    # Словарь русских названий месяцев
+    month_names_ru = {
+        1: "Январь", 2: "Февраль", 3: "Март", 4: "Апрель",
+        5: "Май", 6: "Июнь", 7: "Июль", 8: "Август",
+        9: "Сентябрь", 10: "Октябрь", 11: "Ноябрь", 12: "Декабрь"
+    }
+
+    if month_raw != 'all':
+        month = int(month_raw)
+        start = datetime.date(now.year, month, 1)
+        end_month = month % 12 + 1
+        end_year = now.year + (month == 12)
+        end = datetime.date(end_year, end_month, 1)
         query = query.filter(Zayavka.created_at >= start, Zayavka.created_at < end)
+    else:
+        month = 'all'
 
+    # Подготовка данных
     data = [{
         'Сотрудник': z.user.username,
         'Тип': z.type,
@@ -405,19 +420,21 @@ def generate_report():
 
     df = pd.DataFrame(data)
     output = io.BytesIO()
-    now = datetime.datetime.now()
 
+    # Название файла
     if month == 'all':
         filename = f"Заявки_{now.year}.xlsx"
     else:
-        month_name = now.strftime('%B')
+        month_name = month_names_ru.get(month, f"Месяц_{month}")
         filename = f"Заявки_{month_name}_{now.year}.xlsx"
 
+    # Создание Excel
     with pd.ExcelWriter(output, engine='openpyxl') as writer:
         df.to_excel(writer, index=False, sheet_name='Отчёт')
 
     output.seek(0)
     return send_file(output, download_name=filename, as_attachment=True)
+
 
 @app.route('/export_requests')
 @role_required('admin')
