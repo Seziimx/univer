@@ -487,7 +487,7 @@ form {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 5px; /* чуть меньше отступы */
-    max-height: 90vh; /* увеличил ещё выше */
+    max-height: 100vh; /* увеличил ещё выше */
     overflow-y: auto;
 }
 
