@@ -484,10 +484,10 @@ form {
 /* Request list container */
 #request-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
-    padding: 10px;
-    max-height: 75vh;
+    padding: 5px; /* чуть меньше отступы */
+    max-height: 100vh; /* увеличил ещё выше */
     overflow-y: auto;
 }
 
@@ -660,6 +660,12 @@ form {
     transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
     z-index: -1;
 }
+
+.card:hover::before, .btn:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
 
 /* Login and Registration Page Styles */
 
