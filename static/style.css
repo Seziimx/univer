@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Styled Button */
 .styled-btn {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 12px;
     border-radius: 8px;
     background: linear-gradient(135deg, #7494ec, #6c63ff);
     color: #fff;
@@ -429,7 +429,7 @@ form {
 
 /* Card Style */
 .card {
-    max-width: 450px; /* Increased maximum width */
+    max-width: 500px; /* Increased maximum width */
     width: 100%; /* Ensure cards take full width of their grid cell */
     background: #fff;
     border-radius: 10px;

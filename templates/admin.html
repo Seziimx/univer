@@ -78,15 +78,17 @@
                         <span style="color: #555;">Нет файла</span>
                     {% endif %}
                 </p>
-                <p><strong>Кто оставил заявку:</strong> <span style="color: #555;">{{ z.user.username }}</span></p>
+                <p><strong>Кто оставил заявку::</strong> <span style="color: #555;">{{ z.user.username }}</span></p>
                 <form method="POST" action="/update_status">
                     <input type="hidden" name="id" value="{{ z.id }}">
-                    <div class="status-buttons" style="display: flex; gap: 10px; margin-top: 10px;"> <!-- Flexbox layout -->
-                        <button name="action" value="сделано" class="btn compact-btn" style="background: #1cc88a;">Сделано</button>
-                        <button name="action" value="ожидает" class="btn compact-btn" style="background: #f6c23e;">Ожидайте</button>
-                        <button name="action" value="отклонено" class="btn compact-btn" style="background: #e74a3b;">Отклонить</button>
-                        <button name="action" value="неизвестно" class="btn compact-btn" style="background: #858796;">Неизвестно</button>
+                    <div class="status-buttons" style="display: flex; gap: 10px; margin-top: 10px;">
+                        <button name="action" value="сделано" class="btn compact-btn" style="background: #1cc88a;">✔ Сделано</button>
+                        <button name="action" value="ожидает" class="btn compact-btn" style="background: #f6c23e;">⌛ Ожидание</button>
+                        <button name="action" value="отклонено" class="btn compact-btn" style="background: #e74a3b;">✖ Отказ</button>
+                        <button name="action" value="неизвестно" class="btn compact-btn" style="background: #858796;">? Неясно</button>
                     </div>
+                </form>
+                
                 </form>
                 {% if z.comment %}
                 <div class="comments-section" style="margin-top: 15px; max-height: 100px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; padding: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
