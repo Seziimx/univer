@@ -10,13 +10,16 @@
 <body style="font-family: 'Roboto', sans-serif; font-size: 16px; color: #000000; margin: 0;">
 
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">Portal</div>
+    <nav class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #f8f9fc;">
+        <div class="nav-left" style="display: flex; align-items: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Логотип университета" style="height: 40px;">
+            <div class="logo">Portal</div>
+        </div>
         <span style="font-size: 14px; color: #555;">© Автор: Байболатова Гүлсезім & Жакин Айбек, ВТКО 401</span>
-        <ul class="nav-links">
+        <ul class="nav-links" style="list-style: none; display: flex; gap: 15px; align-items: center;">
             {% if session['role'] == 'admin' %}
                 <li><a href="/admin">Заявки</a></li>
-                <li><a href="/history">История завершённых заявок</a></li>
+                <li><a href="/history">История</a></li>
                 <li><a href="/calendar">Календарь</a></li>
                 <li><a href="/reports">Отчёты</a></li>
                 <li><a href="/users">Пользователи</a></li>
@@ -24,15 +27,20 @@
                 <li><a href="/employee">Подать заявку</a></li>
                 <li><a href="/my-requests">Мои заявки</a></li>
             {% endif %}
-            <li><a href="/profile">Мой профиль</a></li>
+            <li><a href="/profile">Профиль</a></li>
             <li><a href="/logout" class="logout-btn">Выйти</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <div class="container" style="padding: 20px; min-height: 90vh;">
+    <div class="container" style="padding: 20px; min-height: 85vh;">
         {% block content %}{% endblock %}
     </div>
+
+    <!-- Footer -->
+    <footer style="background-color: #f1f1f1; padding: 15px 20px; text-align: center; font-size: 14px; color: #555;">
+        <p>© {{ now().year }} Жубанов Университет | Все права защищены</p>
+    </footer>
 
 </body>
 </html>
