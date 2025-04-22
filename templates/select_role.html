@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбор роли</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="font-family: 'Roboto', sans-serif; text-align: center; padding: 50px;">
+    <h1 style="font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">Выберите вашу роль</h1>
+    <form method="POST" action="/select_role" style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+        <button type="submit" name="role" value="employee" class="btn styled-btn">Сотрудник</button>
+        <button type="submit" name="role" value="admin" class="btn styled-btn">Администратор</button>
+    </form>
+</body>
+</html>

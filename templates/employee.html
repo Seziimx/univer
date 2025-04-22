@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Panel{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 30px;">Подать заявку</h1>
+
+<form method="POST" action="/send" enctype="multipart/form-data" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+    <select name="type" class="input-box styled-dropdown" required>
+        <option value="" disabled selected>Выберите тип заявки</option>
+        <option value="Картридж Canon 737">Картридж Canon 737</option>
+        <option value="HDMI сплитер 4-1 с переключателем">HDMI сплитер 4-1 с переключателем</option>
+        <option value="SSD Kingston SA400S37 480 Gb">SSD Kingston SA400S37 480 Gb</option>
+        <option value="USB Flash карта Kingston DTXM/256 GB">USB Flash карта Kingston DTXM/256 GB</option>
+        <option value="Мышь проводная Logitech B100">Мышь проводная Logitech B100</option>
+        <option value="Монитор Samsung 24">Монитор Samsung 24"</option>
+        <option value="Веб-камера Logitech C270">Веб-камера Logitech C270</option>
+        <option value="Наушники с микрофоном Defender">Наушники с микрофоном Defender</option>
+        <option value="Проектор ViewSonic">Проектор ViewSonic</option>
+        <option value="Картридж HP CF283A (83A)">Картридж HP CF283A (83A)</option>
+        <option value="Чип для картриджа HP 83A">Чип для картриджа HP 83A</option>
+        <option value="Клавиатура Smartbuy ONE 101">Клавиатура Smartbuy ONE 101</option>
+        <option value="Универсальная зарядка для ноутбуков">Универсальная зарядка для ноутбуков</option>
+        <option value="Принтер Brother HL-L2365">Принтер Brother HL-L2365</option>
+        <option value="Сетевой фильтр 5 розеток">Сетевой фильтр 5 розеток</option>
+        <option value="Кабель HDMI 1.5м">Кабель HDMI 1.5м</option>
+        <option value="Кабель USB–microUSB">Кабель USB–microUSB</option>
+        <option value="Папка для документов A4">Папка для документов A4</option>
+        <option value="Блок питания ATX 500W">Блок питания ATX 500W</option>
+        <option value="Роутер TP-Link Archer C20">Роутер TP-Link Archer C20</option>
+    </select>
+
+    <textarea name="description" rows="4" class="input-box styled-input" placeholder="Описание заявки..." required></textarea>
+    
+    <label class="switch-container">
+        <input type="checkbox" name="urgent" value="1">
+        <span class="switch-slider"></span>
+        <span class="switch-label">🔥 Срочно</span>
+    </label>
+      
+    <label class="custom-file-upload">
+        <input type="file" name="file" accept="image/*,video/*" id="file-input">
+        📎 Загрузить файл
+    </label>
+    <span id="file-name" class="file-name-text">Файл не выбран</span>
+
+    <button type="submit" class="btn styled-btn">Отправить</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fileInput = document.getElementById('file-input');
+        const fileNameText = document.getElementById('file-name');
+
+        fileInput.addEventListener('change', function () {
+            fileNameText.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : 'Файл не выбран';
+        });
+    });
+</script>
+{% endblock %}

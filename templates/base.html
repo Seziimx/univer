@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portal{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Roboto', sans-serif; font-size: 16px; color: #000000; margin: 0;">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Portal</div>
+        <span style="font-size: 14px; color: #555;">© Автор: Байболатова Гүлсезім & Жакин Айбек</span>
+        <span style="font-size: 14px; color: #555;">ВТКО 401</span>
+        <ul class="nav-links">
+            {% if session['role'] == 'admin' %}
+                <li><a href="/admin">Заявки</a></li>
+                <li><a href="/history">История завершённых заявок</a></li>
+                <li><a href="/calendar">Календарь</a></li>
+                <li><a href="/reports">Отчёты</a></li>
+                <li><a href="/users">Пользователи</a></li>
+            {% elif session['role'] == 'employee' %}
+                <li><a href="/employee">Подать заявку</a></li>
+                <li><a href="/my-requests">Мои заявки</a></li>
+            {% endif %}
+            <li><a href="/profile">Мой профиль</a></li>
+            <li><a href="/logout" class="logout-btn">Выйти</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" style="padding: 20px; min-height: 90vh;">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

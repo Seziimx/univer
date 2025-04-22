@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Календарь{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">Календарь заявок</h1>
+<div id="calendar" style="height: 100%; padding: 20px; background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: '/api/calendar_events',  // Fetch events from the API
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            eventColor: '#6c63ff',
+            eventTextColor: '#fff'
+        });
+
+        calendar.render();
+
+        // Auto-refresh events every 30 seconds
+        setInterval(function () {
+            calendar.refetchEvents();  // Refresh events from the API
+        }, 30000);  // 30,000 ms = 30 seconds
+    });
+</script>
+{% endblock %}

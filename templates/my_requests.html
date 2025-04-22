@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}Мои заявки{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 30px;">Мои заявки</h1>
+
+<div style="max-height: 75vh; overflow-y: auto; padding-right: 10px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        {% for z in zayavki %}
+        <div class="card" id="request-card-{{ z.id }}" style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 300px; transition: opacity 0.5s;">
+            <p><strong>{{ z.type|lower }}</strong></p>
+            <p>{{ z.description }}</p>
+            <p><strong>Дата:</strong> {{ z.created_at.strftime('%d.%m.%Y %H:%M') }}</p>
+            <p><strong>Статус:</strong>
+                {% if z.status|lower == 'сделано' %}
+                <span style="color: green;">Сделано ✅</span>
+                {% elif z.status|lower == 'ожидает' %}
+                <span style="color: orange;">Ожидает 🟡</span>
+                {% elif z.status|lower == 'отказано' %}
+                <span style="color: red;">Отклонено 🔴</span>
+                {% else %}
+                <span style="color: gray;">Неизвестно</span>
+                {% endif %}
+            </p>
+            <p><strong>Файл:</strong>
+                {% if z.file %}
+                <a href="{{ url_for('uploaded_file', filename=z.file) }}" target="_blank">Скачать</a>
+                {% else %}
+                Нет файла
+                {% endif %}
+            </p>
+
+            {% if z.status not in ['сделано'] %}
+            <button class="btn styled-btn delete-btn" style="margin-top: 10px; background: #e74a3b;" data-request-id="{{ z.id }}">Удалить</button>
+            {% endif %}
+
+            {% if z.status in ['сделано', 'отклонено'] and not z.confirmed_by_user %}
+            <form method="POST" action="{{ url_for('submit_feedback', request_id=z.id) }}">
+                <div class="rating">
+                    <input type="radio" id="star5-{{ z.id }}" name="rating" value="5" required>
+                    <label for="star5-{{ z.id }}">&#9734;</label>
+                    <input type="radio" id="star4-{{ z.id }}" name="rating" value="4">
+                    <label for="star4-{{ z.id }}">&#9734;</label>
+                    <input type="radio" id="star3-{{ z.id }}" name="rating" value="3">
+                    <label for="star3-{{ z.id }}">&#9734;</label>
+                    <input type="radio" id="star2-{{ z.id }}" name="rating" value="2">
+                    <label for="star2-{{ z.id }}">&#9734;</label>
+                    <input type="radio" id="star1-{{ z.id }}" name="rating" value="1">
+                    <label for="star1-{{ z.id }}">&#9734;</label>
+                </div>
+                <textarea name="comment" placeholder="Оставьте комментарий..." rows="3" class="styled-textarea" required></textarea>
+                <button type="submit" class="btn styled-btn" style="margin-top: 10px;">Отправить</button>
+            </form>
+            {% elif z.comment %}
+            <p><strong>Комментарий:</strong> {{ z.comment }}</p>
+            <p><strong>Оценка:</strong> {{ '⭐' * z.rating }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Modal for Delete Confirmation -->
+<div id="delete-modal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center;">
+    <div class="modal-content" style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.3); text-align: center; width: 300px;">
+        <p style="margin-bottom: 20px;">Вы точно хотите удалить эту заявку?</p>
+        <form id="delete-form" method="POST">
+            <button type="submit" class="btn styled-btn" style="background: #e74a3b; margin-right: 10px;">Удалить</button>
+            <button type="button" class="btn styled-btn cancel-btn" style="background: #858796;">Отмена</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        const modal = document.getElementById('delete-modal');
+        const deleteForm = document.getElementById('delete-form');
+        const cancelBtn = document.querySelector('.cancel-btn');
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const requestId = this.getAttribute('data-request-id');
+                deleteForm.action = `/delete_request/${requestId}`;
+                deleteForm.dataset.requestId = requestId; // Store the request ID for animation
+                modal.style.display = 'flex';
+            });
+        });
+
+        deleteForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+            const requestId = deleteForm.dataset.requestId;
+            const card = document.getElementById(`request-card-${requestId}`);
+            card.style.opacity = '0'; // Fade out the card
+            setTimeout(() => {
+                card.remove(); // Remove the card after the animation
+                modal.style.display = 'none'; // Hide the modal
+                // Optionally, send the delete request to the server
+                fetch(deleteForm.action, { method: 'POST' });
+            }, 500); // Match the transition duration
+        });
+
+        cancelBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+    });
+</script>
+{% endblock %}
+

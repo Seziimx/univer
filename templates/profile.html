@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Мой профиль{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 20px; display: flex; justify-content: center; align-items: center; height: 90vh;">
+    <div class="profile-card">
+        <div class="profile-photo">
+            <img src="{{ url_for('static', filename='uploads/' + user.photo) if user.photo else url_for('static', filename='default-profile.png') }}" alt="Фото профиля">
+        </div>
+        <h2 class="profile-name">{{ user.full_name }}</h2>
+        <p class="profile-field"><i class='bx bxs-school'></i> Факультет: {{ user.faculty }}</p>
+        <p class="profile-field"><i class='bx bxs-briefcase'></i> Должность: {{ user.position }}</p>
+        <p class="profile-field"><i class='bx bxs-envelope'></i> Email: {{ user.email }}</p>
+        <a href="/profile/edit" class="btn styled-btn">Редактировать профиль</a>
+    </div>
+</div>
+{% endblock %}

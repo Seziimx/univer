@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}История заявок{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; margin-bottom: 20px;">История заявок</h1>
+<table style="width: 100%; border-collapse: collapse; text-align: left;">
+    <thead>
+        <tr>
+            <th>Тип</th>
+            <th>Описание</th>
+            <th>Дата</th>
+            <th>Статус</th>
+            <th>Комментарий</th>
+            <th>Оценка</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for z in zayavki %}
+        <tr>
+            <td>{{ z.type }}</td>
+            <td>{{ z.description }}</td>
+            <td>{{ z.created_at.strftime('%d.%m.%Y %H:%M') }}</td>
+            <td>{{ z.status }}</td>
+            <td>{{ z.comment or '—' }}</td>
+            <td>{{ '⭐' * z.rating if z.rating else '—' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
