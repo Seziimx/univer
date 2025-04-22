@@ -429,7 +429,7 @@ form {
 
 /* Card Style */
 .card {
-    max-width: 350px; /* Increased maximum width */
+    max-width: 400px; /* Increased maximum width */
     width: 100%; /* Ensure cards take full width of their grid cell */
     background: #fff;
     border-radius: 10px;
