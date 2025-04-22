@@ -130,8 +130,9 @@ button, .btn, .styled-btn, .compact-btn {
     overflow: hidden;
     position: relative;
     width: 950px;
-    height: 1000px;
     margin: 20px;
+    min-height: 100%;
+    flex: 1;
 }
 
 .container h1 {
