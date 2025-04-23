@@ -613,29 +613,30 @@ def get_status_color(status):
         
     }.get(status, 'lightblue')
 
-
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
 
-app = Flask(__name__)
-
-# Устанавливаем настройки локализации
+# Настройки локализации
 app.config['BABEL_DEFAULT_LOCALE'] = 'ru'  # Язык по умолчанию
-app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'  # Папка с переводами
+app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'  # Путь к переводам
 
+# Подключаем Babel к приложению
 babel = Babel(app)
 
-# Функция для выбора языка
-@babel.localeselector
+# Функция для определения языка пользователя
 def get_locale():
-    return request.args.get('lang', 'ru')  # Переключение языка через параметр в URL
+    # Пытаемся взять язык из параметра URL ?lang=ru/en и т.д.
+    return request.args.get('lang', 'ru')
 
-@app.route('/')
-def index():
-    return render_template('base.html')
+# Регистрируем функцию выбора языка в Babel
+babel.locale_selector_func = get_locale
 
-if __name__ == '__main__':
+
+
+# Запускаем приложение
+if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 

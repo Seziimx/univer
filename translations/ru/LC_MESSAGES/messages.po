@@ -1,4 +1,4 @@
-# Kazakh translations for PROJECT.
+# Russian translations for PROJECT.
 # Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -7,12 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-23 16:31+0500\n"
-"PO-Revision-Date: 2025-04-23 16:38+0500\n"
+"POT-Creation-Date: 2025-04-23 17:04+0500\n"
+"PO-Revision-Date: 2025-04-23 17:04+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: kk\n"
-"Language-Team: kk <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,377 +25,383 @@ msgstr ""
 
 #: templates/admin.html:6
 msgid "Панель управления"
-msgstr "Басқару панелі"
+msgstr ""
 
 #: templates/admin.html:11
 msgid "Все типы"
-msgstr "Барлық түрлері"
+msgstr ""
 
 #: templates/admin.html:12 templates/employee.html:11
 msgid "Картридж Canon 737"
-msgstr "Canon 737 картриджі"
+msgstr ""
 
 #: templates/admin.html:13 templates/employee.html:12
 msgid "HDMI сплитер 4-1 с переключателем"
-msgstr "4-1 HDMI сплиттері ауыстырып қосқышпен"
+msgstr ""
 
 #: templates/admin.html:14 templates/employee.html:13
 msgid "SSD Kingston SA400S37 480 Gb"
-msgstr "Kingston SA400S37 480 Гб SSD"
+msgstr ""
 
 #: templates/admin.html:15 templates/employee.html:14
 msgid "USB Flash карта Kingston DTXM/256 GB"
-msgstr "Kingston DTXM/256 ГБ USB флеш картасы"
+msgstr ""
 
 #: templates/admin.html:16 templates/employee.html:15
 msgid "Мышь проводная Logitech B100"
-msgstr "Logitech B100 сымды тышқан"
+msgstr ""
 
 #: templates/admin.html:17 templates/employee.html:16
 msgid "Монитор Samsung 24\""
-msgstr "Samsung 24\" монитор"
+msgstr ""
 
 #: templates/admin.html:18 templates/employee.html:17
 msgid "Веб-камера Logitech C270"
-msgstr "Logitech C270 веб-камерасы"
+msgstr ""
 
 #: templates/admin.html:19 templates/employee.html:18
 msgid "Наушники с микрофоном Defender"
-msgstr "Defender микрофоны бар құлаққаптар"
+msgstr ""
 
 #: templates/admin.html:20 templates/employee.html:19
 msgid "Проектор ViewSonic"
-msgstr "ViewSonic проекторы"
+msgstr ""
 
 #: templates/admin.html:21 templates/employee.html:20
 msgid "Картридж HP CF283A (83A)"
-msgstr "HP CF283A (83A) картриджі"
+msgstr ""
 
 #: templates/admin.html:22 templates/employee.html:21
 msgid "Чип для картриджа HP 83A"
-msgstr "HP 83A картриджі үшін чип"
+msgstr ""
 
 #: templates/admin.html:23 templates/employee.html:22
 msgid "Клавиатура Smartbuy ONE 101"
-msgstr "Smartbuy ONE 101 пернетақтасы"
+msgstr ""
 
 #: templates/admin.html:24 templates/employee.html:23
 msgid "Универсальная зарядка для ноутбуков"
-msgstr "Ноутбуктар үшін әмбебап қуаттау құрылғысы"
+msgstr ""
 
 #: templates/admin.html:25 templates/employee.html:24
 msgid "Принтер Brother HL-L2365"
-msgstr "Brother HL-L2365 принтері"
+msgstr ""
 
 #: templates/admin.html:26 templates/employee.html:25
 msgid "Сетевой фильтр 5 розеток"
-msgstr "5 розеткалы желілік сүзгі"
+msgstr ""
 
 #: templates/admin.html:27 templates/employee.html:26
 msgid "Кабель HDMI 1.5м"
-msgstr "1.5м HDMI кабелі"
+msgstr ""
 
 #: templates/admin.html:28 templates/employee.html:27
 msgid "Кабель USB–microUSB"
-msgstr "USB–microUSB кабелі"
+msgstr ""
 
 #: templates/admin.html:29 templates/employee.html:28
 msgid "Папка для документов A4"
-msgstr "A4 құжаттарға арналған қалта"
+msgstr ""
 
 #: templates/admin.html:30 templates/employee.html:29
 msgid "Блок питания ATX 500W"
-msgstr "ATX 500W қуат блогы"
+msgstr ""
 
 #: templates/admin.html:31 templates/employee.html:30
 msgid "Роутер TP-Link Archer C20"
-msgstr "TP-Link Archer C20 роутері"
+msgstr ""
 
 #: templates/admin.html:32
 msgid "Оборудование"
-msgstr "Құрылғылар"
+msgstr ""
 
 #: templates/admin.html:33
 msgid "Ремонт"
-msgstr "Жөндеу"
+msgstr ""
 
 #: templates/admin.html:36
 msgid "Все статусы"
-msgstr "Барлық статустар"
+msgstr ""
 
 #: templates/admin.html:37 templates/admin.html:65
 msgid "Ожидает"
-msgstr "Күтілуде"
+msgstr ""
 
 #: templates/admin.html:38 templates/admin.html:63 templates/admin.html:84
 msgid "Сделано"
-msgstr "Жасалған"
+msgstr ""
 
 #: templates/admin.html:39 templates/admin.html:67
 msgid "Отклонено"
-msgstr "Қабылданбады"
+msgstr ""
 
 #: templates/admin.html:40 templates/admin.html:69
 msgid "Неизвестно"
-msgstr "Белгісіз"
+msgstr ""
 
 #: templates/admin.html:42
 msgid "Поиск..."
-msgstr "Іздеу..."
+msgstr ""
 
 #: templates/admin.html:43
 msgid "Применить"
-msgstr "Қолдану"
+msgstr ""
 
 #: templates/admin.html:48
 msgid "Список заявок"
-msgstr "Өтінімдер тізімі"
+msgstr ""
 
 #: templates/admin.html:60 templates/history.html:14
 msgid "Дата:"
-msgstr "Күні:"
+msgstr ""
 
 #: templates/admin.html:61 templates/history.html:15
 msgid "Статус:"
-msgstr "Статус:"
+msgstr ""
 
 #: templates/admin.html:72 templates/edit_profile.html:29
 #: templates/history.html:16 templates/profile.html:12
 #: templates/profile_employee.html:12
 msgid "Факультет:"
-msgstr "Факультет:"
+msgstr ""
 
 #: templates/admin.html:73
 msgid "Файл:"
-msgstr "Файл:"
+msgstr ""
 
 #: templates/admin.html:75
 msgid "Скачать"
-msgstr "Жүктеу"
+msgstr ""
 
 #: templates/admin.html:77
 msgid "Нет файла"
-msgstr "Файл жоқ"
-
+msgstr ""
 
 #: templates/admin.html:80 templates/history.html:17
 msgid "Кто оставил заявку:"
-msgstr "Өтінімді кім қалдырды:"
+msgstr ""
 
 #: templates/admin.html:85
 msgid "Ожидание"
-msgstr "Күту"
+msgstr ""
 
 #: templates/admin.html:86
 msgid "Отказ"
-msgstr "Қабылдамау"
+msgstr ""
 
 #: templates/admin.html:87
 msgid "Неясно"
-msgstr "Белгісіз"
+msgstr ""
 
 #: templates/admin.html:99
 msgid "Заявки не найдены."
-msgstr "Өтінімдер табылмады."
+msgstr ""
 
 #: templates/admin_calendar.html:3 templates/base.html:24
 msgid "Календарь"
-msgstr "Календарь"
+msgstr ""
 
 #: templates/admin_calendar.html:6
 msgid "Календарь заявок"
-msgstr "Өтінімдер календары"
+msgstr ""
 
 #: templates/admin_users.html:3 templates/base.html:26
 msgid "Пользователи"
-msgstr "Пайдаланушылар"
+msgstr ""
 
 #: templates/admin_users.html:6
 msgid "Список пользователей"
-msgstr "Пайдаланушылар тізімі"
+msgstr ""
 
 #: templates/admin_users.html:11
 msgid "Логин"
-msgstr "Логин"
+msgstr ""
 
 #: templates/admin_users.html:12
 msgid "Почта"
-msgstr "Почта"
+msgstr ""
 
 #: templates/admin_users.html:13
 msgid "Роль"
-msgstr "Роль"
+msgstr ""
 
 #: templates/admin_users.html:14
 msgid "Действия"
-msgstr "Әрекеттер"
+msgstr ""
 
 #: templates/admin_users.html:22 templates/create_profile.html:26
 #: templates/index.html:83
 msgid "Администратор"
-msgstr "Әкімші"
+msgstr ""
 
 #: templates/admin_users.html:22 templates/create_profile.html:25
 #: templates/index.html:82
 msgid "Сотрудник"
-msgstr "Қызметкер"
+msgstr ""
 
 #: templates/admin_users.html:25
 msgid "Удалить"
-msgstr "Жою"
+msgstr ""
 
+#: templates/base.html:6 templates/base.html:17
+msgid "Portal"
+msgstr ""
+
+#: templates/base.html:16
+msgid "Логотип университета"
+msgstr ""
 
 #: templates/base.html:19
 msgid "Автор: Байболатова Гүлсезім & Жакин Айбек & Тлекшиева Эльнара, ВТКО 401"
-msgstr "Авторлар: Байболатова Гүлсезім & Жакин Айбек & Тлекшиева Эльнара, ВТКО 401"
+msgstr ""
 
 #: templates/base.html:22
 msgid "Заявки"
-msgstr "Өтінімдер"
+msgstr ""
 
 #: templates/base.html:23
 msgid "История"
-msgstr "Тарих"
-
+msgstr ""
 
 #: templates/base.html:25
 msgid "Отчёты"
-msgstr "Есептер"
+msgstr ""
 
 #: templates/base.html:28 templates/employee.html:6
 msgid "Подать заявку"
-msgstr "Өтінім беру"
+msgstr ""
 
 #: templates/base.html:29
 msgid "Мои заявки"
-msgstr "Менің өтінімдерім"
+msgstr ""
 
 #: templates/base.html:31
 msgid "Профиль"
-msgstr "Профиль"
+msgstr ""
 
 #: templates/base.html:32 templates/edit_profile.html:17
 msgid "Выйти"
-msgstr "Шығу"
+msgstr ""
 
 #: templates/base.html:34
 msgid "ru"
-msgstr "ru"
+msgstr ""
 
 #: templates/base.html:35
 msgid "kz"
-msgstr "kz"
+msgstr ""
 
 #: templates/create_profile.html:3 templates/create_profile.html:6
 msgid "Создание профиля"
-msgstr "Профиль құру"
-
+msgstr ""
 
 #: templates/create_profile.html:10 templates/index.html:30
 #: templates/index.html:59
 msgid "Пароль"
-msgstr "Құпия сөз"
+msgstr ""
 
 #: templates/create_profile.html:14 templates/index.html:67
 msgid "Факультет"
-msgstr "Факультет"
+msgstr ""
 
 #: templates/create_profile.html:18 templates/index.html:71
 #: templates/profile.html:13 templates/profile_employee.html:13
 msgid "Должность"
-msgstr "Лауазым"
+msgstr ""
 
 #: templates/create_profile.html:22 templates/index.html:79
 msgid "Выберите роль"
-msgstr "Роль таңдаңыз"
+msgstr ""
 
 #: templates/create_profile.html:24 templates/index.html:81
 msgid "Выберите вашу роль"
-msgstr "Сіздің рөліңізді таңдаңыз"
+msgstr ""
 
 #: templates/create_profile.html:29
 msgid "Сохранить профиль"
-msgstr "Профильді сақтау"
+msgstr ""
 
 #: templates/edit_profile.html:6 templates/edit_profile.html:23
 #: templates/profile.html:15 templates/profile_admin.html:14
 #: templates/profile_employee.html:15
 msgid "Редактировать профиль"
-msgstr "Профильді өңдеу"
+msgstr ""
 
 #: templates/edit_profile.html:16 templates/profile.html:3
 msgid "Мой профиль"
-msgstr "Менің профилім"
+msgstr ""
 
 #: templates/edit_profile.html:25
 msgid "ФИО:"
-msgstr "Аты-жөні:"
+msgstr ""
 
 #: templates/edit_profile.html:33
 msgid "Должность:"
-msgstr "Лауазымы:"
+msgstr ""
 
 #: templates/edit_profile.html:37
 msgid "Загрузить фото:"
-msgstr "Сурет жүктеу:"
+msgstr ""
 
 #: templates/edit_profile.html:40
 msgid "Сохранить изменения"
-msgstr "Өзгерістерді сақтау"
+msgstr ""
 
+#: templates/employee.html:3
+msgid "Employee Panel"
+msgstr ""
 
 #: templates/employee.html:10
 msgid "Выберите тип заявки"
-msgstr "Өтінім түрін таңдаңыз"
+msgstr ""
 
 #: templates/employee.html:33
 msgid "Описание заявки..."
-msgstr "Өтінімнің сипаттамасы..."
+msgstr ""
 
 #: templates/employee.html:38
 msgid "🔥 Срочно"
-msgstr "🔥 Жедел"
+msgstr ""
 
 #: templates/employee.html:43
 msgid "Загрузить файл"
-msgstr "Файл жүктеу"
+msgstr ""
 
 #: templates/employee.html:45 templates/employee.html:58
 msgid "Файл не выбран"
-msgstr "Файл таңдалмаған"
+msgstr ""
 
 #: templates/employee.html:47 templates/forgot_password.html:22
 msgid "Отправить"
-msgstr "Жіберу"
+msgstr ""
 
 #: templates/forgot_password.html:6 templates/forgot_password.html:13
 msgid "Восстановление пароля"
-msgstr "Құпия сөзді қалпына келтіру"
+msgstr ""
 
 #: templates/forgot_password.html:20
 msgid "Введите ваш email"
-msgstr "Электрондық поштаңызды енгізіңіз"
+msgstr ""
 
 #: templates/forgot_password.html:24
 msgid "Вернуться на главную"
-msgstr "Басты бетке оралу"
+msgstr ""
 
 #: templates/history.html:3 templates/history.html:6
 msgid "История завершённых заявок"
-msgstr "Аяқталған өтінімдер тарихы"
+msgstr ""
 
 #: templates/history.html:8
 msgid "Список завершённых заявок"
-msgstr "Аяқталған өтінімдер тізімі"
+msgstr ""
 
 #: templates/history.html:20
 msgid "Комментарий сотрудника:"
-msgstr "Қызметкердің түсініктемесі:"
+msgstr ""
 
 #: templates/history.html:27
 msgid "Заявки не найдены. Попробуйте изменить фильтры или сбросить поиск."
-msgstr "Өтінімдер табылмады. Фильтрлерді өзгерту немесе іздеуді қайтадан бастауға тырысыңыз."
-
+msgstr ""
 
 #: templates/index.html:6
 msgid "Login/Signup Form"
@@ -402,83 +409,83 @@ msgstr ""
 
 #: templates/index.html:21 templates/index.html:107
 msgid "Вход"
-msgstr "Кіру"
+msgstr ""
 
 #: templates/index.html:26 templates/index.html:51
 msgid "Имя пользователя"
-msgstr "Пайдаланушы аты"
+msgstr ""
 
 #: templates/index.html:34
 msgid "Забыли пароль?"
-msgstr "Құпия сөзді ұмыттыңыз ба?"
+msgstr ""
 
 #: templates/index.html:36
 msgid "Войти"
-msgstr "Кіру"
+msgstr ""
 
 #: templates/index.html:37
 msgid "или войдите через соцсети"
-msgstr "немесе әлеуметтік желілер арқылы кіріңіз"
+msgstr ""
 
 #: templates/index.html:49 templates/index.html:101
 msgid "Регистрация"
-msgstr "Тіркелу"
+msgstr ""
 
 #: templates/index.html:55
 msgid "Электронная почта"
-msgstr "Электрондық пошта"
+msgstr ""
 
 #: templates/index.html:63
 msgid "ФИО"
-msgstr "Аты-жөні"
+msgstr ""
 
 #: templates/index.html:76
 msgid "Загрузить фото"
-msgstr "Сурет жүктеу"
+msgstr ""
 
 #: templates/index.html:86
 msgid "Зарегистрироваться"
-msgstr "Тіркелу"
+msgstr ""
 
 #: templates/index.html:87
 msgid "или зарегистрируйтесь через соцсети"
-msgstr "немесе әлеуметтік желілер арқылы тіркеліңіз"
+msgstr ""
 
 #: templates/index.html:99
 msgid "ЗДРАВСТВУЙТЕ!"
-msgstr "СӘЛЕМ"
+msgstr ""
 
 #: templates/index.html:100
 msgid "Нет аккаунта?"
-msgstr "Аккаунтыңыз жоқ па?"
+msgstr ""
 
 #: templates/index.html:105
 msgid "ДОБРО ПОЖАЛОВАТЬ!"
-msgstr "ҚОШ КЕЛДІҢІҢІЗ!"
+msgstr ""
 
 #: templates/index.html:106
 msgid "Уже есть аккаунт?"
-msgstr "Аккаунтыңыз бар ма?"
+msgstr ""
 
 #: templates/my_history.html:3
 msgid "История заявок"
-msgstr "Өтінімдер тарихы"
+msgstr ""
 
 #: templates/my_history.html:6
 msgid "История заявок "
-msgstr "Өтінімдер тарихы "
+msgstr ""
 
 #: templates/my_history.html:10
 msgid "Тип "
-msgstr "Түрі "
+msgstr ""
 
 #: templates/my_history.html:11
 msgid "Описание "
-msgstr "Сипаттамасы "
+msgstr ""
 
 #: templates/my_history.html:12
 msgid "Дата "
-msgstr "Күні "
+msgstr ""
 
 #: templates/my_history.html:13
 msgid "Статус "
@@ -486,19 +493,19 @@ msgstr ""
 
 #: templates/my_history.html:14
 msgid "Комментарий "
-msgstr "Түсініктеме "
+msgstr ""
 
 #: templates/my_history.html:15
 msgid "Оценка "
-msgstr "Бағалау "
+msgstr ""
 
 #: templates/profile.html:14
 msgid "Email: "
-msgstr "Электрондық пошта:"
+msgstr ""
 
 #: templates/profile_admin.html:3
 msgid "Профиль администратора"
-msgstr "Әкімшінің профилі"
+msgstr ""
 
 #: templates/profile_admin.html:12 templates/profile_employee.html:14
 msgid "Email:"
@@ -506,48 +513,49 @@ msgstr ""
 
 #: templates/profile_admin.html:13
 msgid "Роль:"
-msgstr "Рөлі:"
+msgstr ""
 
 #: templates/profile_employee.html:3
 msgid "Профиль сотрудника"
-msgstr "Қызметкердің профилі"
+msgstr ""
 
 #: templates/reports.html:3
 msgid " Отчёты"
-msgstr "Есептер"
+msgstr ""
 
 #: templates/reports.html:6
 msgid " Формирование отчётов"
-msgstr "Есептер құру"
+msgstr ""
 
 #: templates/reports.html:9
 msgid " За весь год"
-msgstr "Барлық жыл үшін"
+msgstr ""
 
 #: templates/reports.html:23
 msgid " Скачать Excel"
-msgstr "Excel жүктеу"
+msgstr ""
 
 #: templates/reset_password.html:5 templates/reset_password.html:10
 msgid "Сброс пароля"
-msgstr "Құпия сөзді қалпына келтіру"
+msgstr ""
 
 #: templates/reset_password.html:17
 msgid "Сбросить пароль"
-msgstr "Құпия сөзді қалпына келтіру"
+msgstr ""
 
 #: templates/select_role.html:5
 msgid " Выбор роли"
-msgstr "Роль таңдау"
+msgstr ""
 
 #: templates/select_role.html:9
 msgid " Выберите вашу роль"
-msgstr "Сіздің рөліңізді таңдаңыз"
+msgstr ""
 
 #: templates/select_role.html:11
 msgid " Сотрудник"
-msgstr "Қызметкер"
+msgstr ""
 
 #: templates/select_role.html:12
 msgid " Администратор"
-msgstr "Әкімші"
+msgstr ""
+
