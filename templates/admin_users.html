@@ -21,7 +21,7 @@
                     <td style="padding: 10px;">{{ user.email }}</td>
                     <td style="padding: 10px;">{{ _('Администратор') if user.role == 'admin' else _('Сотрудник') }}</td>
                     <td style="padding: 10px;">
-                        <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}" onsubmit="return confirm('{{ _('Вы точно хотите удалить этого пользователя?') }}');">
+                        <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}" onsubmit="return confirm('Вы точно хотите удалить этого пользователя?');">
                             <button type="submit" class="btn styled-btn" style="background: #e74a3b;">{{ _('Удалить') }}</button>
                         </form>
                     </td>

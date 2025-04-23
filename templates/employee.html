@@ -53,8 +53,11 @@
         const fileNameText = document.getElementById('file-name');
 
         fileInput.addEventListener('change', function () {
-            fileNameText.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : '{{ _('Файл не выбран') }}';
+            fileNameText.textContent = fileInput.files.length > 0 
+                ? fileInput.files[0].name 
+                : "{{ _('Файл не выбран') }}";
         });
     });
 </script>
+
 {% endblock %}
