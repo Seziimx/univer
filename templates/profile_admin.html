@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Профиль администратора{% endblock %}
+{% block title %}{{ _('Профиль администратора') }}{% endblock %}
 
 {% block content %}
 <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
@@ -9,9 +9,9 @@
             <img src="{{ url_for('uploaded_file', filename=user.photo) if user.photo else url_for('static', filename='default-profile.png') }}" alt="Фото профиля">
         </div>
         <h2 class="profile-name">{{ user.full_name }}</h2>
-        <p class="profile-field"><i class='bx bxs-envelope'></i> Email: {{ user.email }}</p>
-        <p class="profile-field"><i class='bx bxs-user'></i> Роль: Администратор</p>
-        <a href="/profile/edit" class="btn styled-btn">Редактировать профиль</a>
+        <p class="profile-field"><i class='bx bxs-envelope'></i> {{ _('Email:') }} {{ user.email }}</p>
+        <p class="profile-field"><i class='bx bxs-user'></i> {{ _('Роль:') }} Администратор</p>
+        <a href="/profile/edit" class="btn styled-btn">{{ _('Редактировать профиль') }}</a>
     </div>
 </div>
 {% endblock %}

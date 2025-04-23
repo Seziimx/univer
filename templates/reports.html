@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Отчёты{% endblock %}
+{% block title %}{{ _(' Отчёты') }}{% endblock %}
 
 {% block content %}
-    <h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">Формирование отчётов</h1>
+    <h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">{{ _(' Формирование отчётов') }}</h1>
     <form action="/generate_report" method="post" style="display: flex; flex-direction: column; gap: 15px;">
         <select name="month" class="input-box styled-dropdown">
-            <option value="all">За весь год</option>
+            <option value="all">{{ _(' За весь год') }}</option>
             <option value="1">Январь</option>
             <option value="2">Февраль</option>
             <option value="3">Март</option>
@@ -20,7 +20,7 @@
             <option value="11">Ноябрь</option>
             <option value="12">Декабрь</option>
         </select>
-        <button type="submit" class="btn styled-btn">Скачать Excel</button>
+        <button type="submit" class="btn styled-btn">{{ _(' Скачать Excel') }}</button>
     </form>
     <script src="{{ url_for('static', filename='js/reporting.js') }}"></script>
 {% endblock %}

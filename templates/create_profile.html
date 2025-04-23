@@ -1,31 +1,31 @@
 {% extends "base.html" %}
 
-{% block title %}Создание профиля{% endblock %}
+{% block title %}{{ _('Создание профиля') }}{% endblock %}
 
 {% block content %}
-<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 30px;">Создание профиля</h1>
+<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 30px;">{{ _('Создание профиля') }}</h1>
 
 <form method="POST" action="{{ url_for('create_profile', user_id=user.id) }}" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
     <div class="input-box">
-        <input type="password" name="password" placeholder="Пароль" required>
+        <input type="password" name="password" placeholder="{{ _('Пароль') }}" required>
         <i class='bx bxs-lock-alt'></i>
     </div>
     <div class="input-box">
-        <input type="text" name="faculty" placeholder="Факультет" required>
+        <input type="text" name="faculty" placeholder="{{ _('Факультет') }}" required>
         <i class='bx bxs-school'></i>
     </div>
     <div class="input-box">
-        <input type="text" name="position" placeholder="Должность" required>
+        <input type="text" name="position" placeholder="{{ _('Должность') }}" required>
         <i class='bx bxs-briefcase'></i>
     </div>
     <div class="input-box">
-        <label for="role"><i class='bx bxs-user'></i> Выберите роль</label>
+        <label for="role"><i class='bx bxs-user'></i> {{ _('Выберите роль') }}</label>
         <select id="role" name="role" class="styled-dropdown" required>
-            <option value="" disabled selected>Выберите вашу роль</option>
-            <option value="employee">Сотрудник</option>
-            <option value="admin">Администратор</option>
+            <option value="" disabled selected>{{ _('Выберите вашу роль') }}</option>
+            <option value="employee">{{ _('Сотрудник') }}</option>
+            <option value="admin">{{ _('Администратор') }}</option>
         </select>
     </div>
-    <button type="submit" class="btn styled-btn">Сохранить профиль</button>
+    <button type="submit" class="btn styled-btn">{{ _('Сохранить профиль') }}</button>
 </form>
 {% endblock %}

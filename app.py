@@ -614,13 +614,37 @@ def get_status_color(status):
     }.get(status, 'lightblue')
 
 
+from flask import Flask, render_template, request
+from flask_babel import Babel, _
+
+app = Flask(__name__)
+
+# Устанавливаем настройки локализации
+app.config['BABEL_DEFAULT_LOCALE'] = 'ru'  # Язык по умолчанию
+app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'  # Папка с переводами
+
+babel = Babel(app)
+
+# Функция для выбора языка
+@babel.localeselector
+def get_locale():
+    return request.args.get('lang', 'ru')  # Переключение языка через параметр в URL
+
+@app.route('/')
+def index():
+    return render_template('base.html')
 
 if __name__ == '__main__':
-    from flask_migrate import Migrate
-    migrate = Migrate(app, db)
+    app.run(debug=True)
+
+
+
+#if __name__ == '__main__':
+  #  from flask_migrate import Migrate
+   # migrate = Migrate(app, db)
     
-    with app.app_context():
-        db.create_all()
+    #with app.app_context():
+    #    db.create_all()
     
     # Uncomment the following line to freeze the app
     # freezer.freeze()  # Generate static files

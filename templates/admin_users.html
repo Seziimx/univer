@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Пользователи{% endblock %}
+{% block title %}{{ _('Пользователи') }}{% endblock %}
 
 {% block content %}
-    <h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">Список пользователей</h1>
+    <h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">{{ _('Список пользователей') }}</h1>
     <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 800px;">
             <thead>
                 <tr>
-                    <th style="border-bottom: 2px solid #ddd; padding: 10px;">Логин</th>
-                    <th style="border-bottom: 2px solid #ddd; padding: 10px;">Почта</th>
-                    <th style="border-bottom: 2px solid #ddd; padding: 10px;">Роль</th>
-                    <th style="border-bottom: 2px solid #ddd; padding: 10px;">Действия</th>
+                    <th style="border-bottom: 2px solid #ddd; padding: 10px;">{{ _('Логин') }}</th>
+                    <th style="border-bottom: 2px solid #ddd; padding: 10px;">{{ _('Почта') }}</th>
+                    <th style="border-bottom: 2px solid #ddd; padding: 10px;">{{ _('Роль') }}</th>
+                    <th style="border-bottom: 2px solid #ddd; padding: 10px;">{{ _('Действия') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,10 +19,10 @@
                 <tr>
                     <td style="padding: 10px;">{{ user.username }}</td>
                     <td style="padding: 10px;">{{ user.email }}</td>
-                    <td style="padding: 10px;">{{ 'Администратор' if user.role == 'admin' else 'Сотрудник' }}</td>
+                    <td style="padding: 10px;">{{ _('Администратор') if user.role == 'admin' else _('Сотрудник') }}</td>
                     <td style="padding: 10px;">
-                        <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}" onsubmit="return confirm('Вы точно хотите удалить этого пользователя?');">
-                            <button type="submit" class="btn styled-btn" style="background: #e74a3b;">Удалить</button>
+                        <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}" onsubmit="return confirm('{{ _('Вы точно хотите удалить этого пользователя?') }}');">
+                            <button type="submit" class="btn styled-btn" style="background: #e74a3b;">{{ _('Удалить') }}</button>
                         </form>
                     </td>
                 </tr>
