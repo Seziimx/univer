@@ -34,7 +34,13 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 # Set logging level after app is created
 app.logger.setLevel(logging.INFO)
 
+# Initialize the database with the app
 db.init_app(app)
+
+# Ensure the app context is set up for database operations
+with app.app_context():
+    db.create_all()  # Create tables if they don't exist
+
 migrate = Migrate(app, db)
 
 # Configure OAuth
