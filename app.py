@@ -680,17 +680,7 @@ def get_status_color(status):
         'неизвестно': 'gray',
     }.get(status, 'lightblue')
 
-from flask_babel import Babel, _
 
-app.config['BABEL_DEFAULT_LOCALE'] = 'ru'
-app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
-
-babel = Babel(app)
-
-def get_locale():
-    return request.args.get('lang', 'ru')
-
-babel.locale_selector_func = get_locale
 
 if __name__ == "__main__":
     app.run(debug=True)
