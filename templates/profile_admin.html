@@ -3,7 +3,7 @@
 {% block title %}Профиль администратора{% endblock %}
 
 {% block content %}
-<div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+<div style="padding: 20px; display: flex; justify-content: center; align-items: center; height: 90vh;">
     <div class="profile-card">
         <div class="profile-photo">
             <img src="{{ url_for('static', filename='uploads/' + user.photo) if user.photo else url_for('static', filename='default-profile.png') }}" alt="Фото профиля">
