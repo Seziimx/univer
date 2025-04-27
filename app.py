@@ -113,8 +113,6 @@ def send_to_all_admins(message):
         else:
             app.logger.warning("Admin chat ID is None or invalid.")
 
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
-
 @app.route('/telegram/start', methods=['POST'])
 def telegram_start():
     data = request.get_json()
