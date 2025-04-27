@@ -68,15 +68,13 @@ from models import db, Zayavka  # Предположим, что у вас ес�
 
 # Telegram Bot Configuration
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-TELEGRAM_ADMIN_CHAT_IDS = [
-    os.getenv('TELEGRAM_ADMIN_CHAT_ID'),
-    os.getenv('TELEGRAM_ADMIN_CHAT_ID_2'),
-    os.getenv('TELEGRAM_ADMIN_CHAT_ID_3')
-]
+TELEGRAM_ADMIN_CHAT_ID = os.getenv('TELEGRAM_ADMIN_CHAT_ID')
+TELEGRAM_ADMIN_CHAT_ID_2 = os.getenv('TELEGRAM_ADMIN_CHAT_ID_2')
+TELEGRAM_ADMIN_CHAT_ID_3 = os.getenv('TELEGRAM_ADMIN_CHAT_ID_3')
 
 app.config['SECRET_KEY'] = 'your_secret_key'  # Настроить секретный ключ для сессий
 
-app.logger.info(f"Loaded admin chat IDs: {TELEGRAM_ADMIN_CHAT_IDS}")
+app.logger.info(f"Loaded admin chat IDs: {TELEGRAM_ADMIN_CHAT_ID }, {TELEGRAM_ADMIN_CHAT_ID_2}, {TELEGRAM_ADMIN_CHAT_ID_3}")
 
 def send_telegram_message(chat_id, message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -92,7 +90,7 @@ def send_telegram_message(chat_id, message):
 
 def send_to_all_admins(message):
     app.logger.info(f"Sending message to all admins: {message}")
-    for admin_id in TELEGRAM_ADMIN_CHAT_IDS:
+    for admin_id in TELEGRAM_ADMIN_CHAT_ID + TELEGRAM_ADMIN_CHAT_ID_2 + TELEGRAM_ADMIN_CHAT_ID_3:
         if admin_id:
             app.logger.info(f"Sending message to admin with chat ID: {admin_id}")
             send_telegram_message(admin_id, message)
