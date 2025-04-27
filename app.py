@@ -34,20 +34,15 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 # Set logging level after app is created
 app.logger.setLevel(logging.INFO)
 
-# Initialize the database with the app
 db.init_app(app)
-
-# Ensure the app context is set up for database operations
-with app.app_context():
-    db.create_all()  # Create tables if they don't exist
-
 migrate = Migrate(app, db)
 
 # Configure OAuth
+import os
 from dotenv import load_dotenv
 load_dotenv()
 
-oauth = OAuth(app)
+oauth = OAuth(app)  # Инициализация OAuth
 
 app.config['GOOGLE_CLIENT_ID'] = os.getenv('GOOGLE_CLIENT_ID')
 app.config['GOOGLE_CLIENT_SECRET'] = os.getenv('GOOGLE_CLIENT_SECRET')
@@ -79,7 +74,6 @@ TELEGRAM_ADMIN_CHAT_IDS = [
     os.getenv('TELEGRAM_ADMIN_CHAT_ID_3')
 ]
 
-app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'  # Настроить секретный ключ для сессий
 
 app.logger.info(f"Loaded admin chat IDs: {TELEGRAM_ADMIN_CHAT_IDS}")
