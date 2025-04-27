@@ -18,7 +18,6 @@ from functools import wraps
 from flask_frozen import Freezer
 import requests
 import pytz
-from flask_babel import Babel, _  # Import Babel and the translation function
 
 from models import db, User, Zayavka
 from utils import generate_word_report, generate_pdf_report
@@ -680,20 +679,6 @@ def get_status_color(status):
         'отклонено': 'red',
         'неизвестно': 'gray',
     }.get(status, 'lightblue')
-
-# Configure Babel for translations
-app.config['BABEL_DEFAULT_LOCALE'] = 'ru'  # Default language
-app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'  # Path to translation files
-
-babel = Babel(app)
-
-# Function to determine the user's locale
-@babel.localeselector
-def get_locale():
-    return request.args.get('lang', 'ru')  # Default to Russian if no language is specified
-
-# Ensure `_` is available in Jinja2 templates
-app.jinja_env.globals['_'] = _
 
 if __name__ == "__main__":
     app.run(debug=True)
