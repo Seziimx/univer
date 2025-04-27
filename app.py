@@ -59,6 +59,12 @@ google = oauth.register(
 
 freezer = Freezer(app)
 
+import os
+import requests
+from flask import Flask, request, session, redirect, url_for
+from functools import wraps
+from models import db, Zayavka  # Предположим, что у вас есть модель Zayavka
+
 # Telegram Bot Configuration
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TELEGRAM_ADMIN_CHAT_IDS = [
@@ -67,9 +73,10 @@ TELEGRAM_ADMIN_CHAT_IDS = [
     os.getenv('TELEGRAM_ADMIN_CHAT_ID_3')
 ]
 
-app.logger.info(f"Loaded admin chat IDs: {TELEGRAM_ADMIN_CHAT_IDS}")
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your_secret_key'  # Настроить секретный ключ для сессий
 
-TELEGRAM_EMPLOYEE_CHAT_ID_TEMPLATE = "employee_{user_id}"
+app.logger.info(f"Loaded admin chat IDs: {TELEGRAM_ADMIN_CHAT_IDS}")
 
 def send_telegram_message(chat_id, message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -82,6 +89,50 @@ def send_telegram_message(chat_id, message):
             app.logger.info(f"Telegram message sent to chat ID {chat_id}")
     except Exception as e:
         app.logger.error(f"Error sending Telegram message: {e}")
+
+def send_to_all_admins(message):
+    app.logger.info(f"Sending message to all admins: {message}")
+    for admin_id in TELEGRAM_ADMIN_CHAT_IDS:
+        if admin_id:
+            app.logger.info(f"Sending message to admin with chat ID: {admin_id}")
+            send_telegram_message(admin_id, message)
+        else:
+            app.logger.warning("Admin chat ID is None or invalid.")
+
+@app.route('/telegram/start', methods=['POST'])
+def telegram_start():
+    """Handler for the start route, sending a welcome message to admins."""
+    data = request.get_json()
+    user_id = data.get('user_id')
+    role = data.get('role', 'admin')  # Assume role is 'admin' for now
+
+    if role == 'admin':
+        welcome_message = (
+            "Добро пожаловать, администратор! 👨‍💻\n"
+            "Вы можете:\n"
+            "1️⃣ Просмотреть все заявки.\n"
+            "2️⃣ Сформировать отчёты.\n"
+            "Выберите действие, используя кнопки ниже."
+        )
+        buttons = [["Просмотр заявок", "Отчёты"]]
+    else:
+        welcome_message = "Добро пожаловать! Пожалуйста, уточните вашу роль."
+        buttons = [["Связаться с поддержкой"]]  # Default fallback button (could be removed if not needed)
+
+    send_telegram_message_with_buttons(user_id, welcome_message, buttons)
+    return {"message": "Welcome message with buttons sent."}, 200
+
+@app.route('/telegram/notify_admins', methods=['POST'])
+def notify_admins():
+    """Send a notification to all admins."""
+    data = request.get_json()
+    message = data.get('message')
+
+    if message:
+        send_to_all_admins(message)
+        return {"message": "Notification sent to admins."}, 200
+    else:
+        return {"message": "No message provided."}, 400
 
 def send_telegram_message_with_buttons(chat_id, message, buttons):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
@@ -103,70 +154,6 @@ def send_telegram_message_with_buttons(chat_id, message, buttons):
             app.logger.info(f"Telegram message with buttons sent to chat ID {chat_id}")
     except Exception as e:
         app.logger.error(f"Error sending Telegram message with buttons: {e}")
-
-def send_to_all_admins(message):
-    app.logger.info(f"Sending message to all admins: {message}")
-    for admin_id in TELEGRAM_ADMIN_CHAT_IDS:
-        if admin_id:
-            app.logger.info(f"Sending message to admin with chat ID: {admin_id}")
-            send_telegram_message(admin_id, message)
-        else:
-            app.logger.warning("Admin chat ID is None or invalid.")
-
-@app.route('/telegram/start', methods=['POST'])
-def telegram_start():
-    data = request.get_json()
-    user_id = data.get('user_id')
-    role = data.get('role', 'employee')
-
-    if role == 'employee':
-        welcome_message = (
-            "Добро пожаловать в систему, уважаемый сотрудник! 🎉\n"
-            "Вы можете:\n"
-            "1️⃣ Создать новую заявку.\n"
-            "2️⃣ Просмотреть свои заявки.\n"
-            "Выберите действие, используя кнопки ниже."
-        )
-        buttons = [["Создать заявку", "Мои заявки"]]
-    elif role == 'admin':
-        welcome_message = (
-            "Добро пожаловать, администратор! 👨‍💻\n"
-            "Вы можете:\n"
-            "1️⃣ Просмотреть все заявки.\n"
-            "2️⃣ Сформировать отчёты.\n"
-            "Выберите действие, используя кнопки ниже."
-        )
-        buttons = [["Просмотр заявок", "Отчёты"]]
-    else:
-        welcome_message = "Добро пожаловать! Пожалуйста, уточните вашу роль."
-        buttons = [["Связаться с поддержкой"]]
-
-    send_telegram_message_with_buttons(user_id, welcome_message, buttons)
-    return {"message": "Welcome message with buttons sent."}, 200
-
-@app.route('/telegram/my_requests', methods=['POST'])
-def telegram_my_requests():
-    """Handle the 'Мои заявки' action for employees."""
-    data = request.get_json()  # Получаем данные в формате JSON
-    user_id = data.get('user_id')
-    zayavki = Zayavka.query.filter_by(user_id=user_id).order_by(Zayavka.created_at.desc()).all()
-
-    if not zayavki:
-        send_telegram_message(user_id, "У вас нет заявок.")
-        return {"message": "No requests found for the user."}, 200
-
-    message = "📋 <b>Ваши заявки:</b>\n"
-    for z in zayavki[:10]:
-        message += (
-            f"🆔 {z.id}\n"
-            f"Тип: {z.type}\n"
-            f"Описание: {z.description}\n"
-            f"Статус: {z.status}\n"
-            f"Дата: {z.created_at.strftime('%d.%m.%Y %H:%M')}\n\n"
-        )
-
-    send_telegram_message(user_id, message)
-    return {"message": "Requests sent to employee."}, 200
 
 def role_required(role):
     def wrapper(f):
