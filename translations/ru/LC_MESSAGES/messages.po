@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-23 17:04+0500\n"
-"PO-Revision-Date: 2025-04-23 17:04+0500\n"
+"POT-Creation-Date: 2025-04-27 15:22+0500\n"
+"PO-Revision-Date: 2025-04-27 15:22+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -27,177 +27,165 @@ msgstr ""
 msgid "Панель управления"
 msgstr ""
 
-#: templates/admin.html:11
+#: templates/admin.html:10
 msgid "Все типы"
 msgstr ""
 
-#: templates/admin.html:12 templates/employee.html:11
+#: templates/admin.html:11 templates/employee.html:11
 msgid "Картридж Canon 737"
 msgstr ""
 
-#: templates/admin.html:13 templates/employee.html:12
+#: templates/admin.html:12 templates/employee.html:12
 msgid "HDMI сплитер 4-1 с переключателем"
 msgstr ""
 
-#: templates/admin.html:14 templates/employee.html:13
+#: templates/admin.html:13 templates/employee.html:13
 msgid "SSD Kingston SA400S37 480 Gb"
 msgstr ""
 
-#: templates/admin.html:15 templates/employee.html:14
+#: templates/admin.html:14 templates/employee.html:14
 msgid "USB Flash карта Kingston DTXM/256 GB"
 msgstr ""
 
-#: templates/admin.html:16 templates/employee.html:15
+#: templates/admin.html:15 templates/employee.html:15
 msgid "Мышь проводная Logitech B100"
 msgstr ""
 
-#: templates/admin.html:17 templates/employee.html:16
+#: templates/admin.html:16 templates/employee.html:16
 msgid "Монитор Samsung 24\""
 msgstr ""
 
-#: templates/admin.html:18 templates/employee.html:17
+#: templates/admin.html:17 templates/employee.html:17
 msgid "Веб-камера Logitech C270"
 msgstr ""
 
-#: templates/admin.html:19 templates/employee.html:18
+#: templates/admin.html:18 templates/employee.html:18
 msgid "Наушники с микрофоном Defender"
 msgstr ""
 
-#: templates/admin.html:20 templates/employee.html:19
+#: templates/admin.html:19 templates/employee.html:19
 msgid "Проектор ViewSonic"
 msgstr ""
 
-#: templates/admin.html:21 templates/employee.html:20
+#: templates/admin.html:20 templates/employee.html:20
 msgid "Картридж HP CF283A (83A)"
 msgstr ""
 
-#: templates/admin.html:22 templates/employee.html:21
+#: templates/admin.html:21 templates/employee.html:21
 msgid "Чип для картриджа HP 83A"
 msgstr ""
 
-#: templates/admin.html:23 templates/employee.html:22
+#: templates/admin.html:22 templates/employee.html:22
 msgid "Клавиатура Smartbuy ONE 101"
 msgstr ""
 
-#: templates/admin.html:24 templates/employee.html:23
+#: templates/admin.html:23 templates/employee.html:23
 msgid "Универсальная зарядка для ноутбуков"
 msgstr ""
 
-#: templates/admin.html:25 templates/employee.html:24
+#: templates/admin.html:24 templates/employee.html:24
 msgid "Принтер Brother HL-L2365"
 msgstr ""
 
-#: templates/admin.html:26 templates/employee.html:25
+#: templates/admin.html:25 templates/employee.html:25
 msgid "Сетевой фильтр 5 розеток"
 msgstr ""
 
-#: templates/admin.html:27 templates/employee.html:26
+#: templates/admin.html:26 templates/employee.html:26
 msgid "Кабель HDMI 1.5м"
 msgstr ""
 
-#: templates/admin.html:28 templates/employee.html:27
+#: templates/admin.html:27 templates/employee.html:27
 msgid "Кабель USB–microUSB"
 msgstr ""
 
-#: templates/admin.html:29 templates/employee.html:28
+#: templates/admin.html:28 templates/employee.html:28
 msgid "Папка для документов A4"
 msgstr ""
 
-#: templates/admin.html:30 templates/employee.html:29
+#: templates/admin.html:29 templates/employee.html:29
 msgid "Блок питания ATX 500W"
 msgstr ""
 
-#: templates/admin.html:31 templates/employee.html:30
+#: templates/admin.html:30 templates/employee.html:30
 msgid "Роутер TP-Link Archer C20"
 msgstr ""
 
-#: templates/admin.html:32
+#: templates/admin.html:31
 msgid "Оборудование"
 msgstr ""
 
-#: templates/admin.html:33
+#: templates/admin.html:32
 msgid "Ремонт"
 msgstr ""
 
-#: templates/admin.html:36
+#: templates/admin.html:35
 msgid "Все статусы"
 msgstr ""
 
-#: templates/admin.html:37 templates/admin.html:65
+#: templates/admin.html:36 templates/admin.html:64
 msgid "Ожидает"
 msgstr ""
 
-#: templates/admin.html:38 templates/admin.html:63 templates/admin.html:84
+#: templates/admin.html:37 templates/admin.html:62
 msgid "Сделано"
 msgstr ""
 
-#: templates/admin.html:39 templates/admin.html:67
+#: templates/admin.html:38 templates/admin.html:66
 msgid "Отклонено"
 msgstr ""
 
-#: templates/admin.html:40 templates/admin.html:69
+#: templates/admin.html:39 templates/admin.html:68
 msgid "Неизвестно"
 msgstr ""
 
-#: templates/admin.html:42
+#: templates/admin.html:41
 msgid "Поиск..."
 msgstr ""
 
-#: templates/admin.html:43
+#: templates/admin.html:42
 msgid "Применить"
 msgstr ""
 
-#: templates/admin.html:48
+#: templates/admin.html:47
 msgid "Список заявок"
 msgstr ""
 
-#: templates/admin.html:60 templates/history.html:14
+#: templates/admin.html:59 templates/history.html:14
 msgid "Дата:"
 msgstr ""
 
-#: templates/admin.html:61 templates/history.html:15
+#: templates/admin.html:60 templates/history.html:15
 msgid "Статус:"
 msgstr ""
 
-#: templates/admin.html:72 templates/edit_profile.html:29
+#: templates/admin.html:71 templates/edit_profile.html:29
 #: templates/history.html:16 templates/profile.html:12
 #: templates/profile_employee.html:12
 msgid "Факультет:"
 msgstr ""
 
-#: templates/admin.html:73
+#: templates/admin.html:72
 msgid "Файл:"
 msgstr ""
 
-#: templates/admin.html:75
+#: templates/admin.html:74
 msgid "Скачать"
 msgstr ""
 
-#: templates/admin.html:77
+#: templates/admin.html:76
 msgid "Нет файла"
 msgstr ""
 
-#: templates/admin.html:80 templates/history.html:17
+#: templates/admin.html:79 templates/history.html:17
 msgid "Кто оставил заявку:"
 msgstr ""
 
-#: templates/admin.html:85
-msgid "Ожидание"
-msgstr ""
-
-#: templates/admin.html:86
-msgid "Отказ"
-msgstr ""
-
-#: templates/admin.html:87
-msgid "Неясно"
-msgstr ""
-
-#: templates/admin.html:99
+#: templates/admin.html:98
 msgid "Заявки не найдены."
 msgstr ""
 
-#: templates/admin_calendar.html:3 templates/base.html:24
+#: templates/admin_calendar.html:3 templates/base.html:71
 msgid "Календарь"
 msgstr ""
 
@@ -205,7 +193,7 @@ msgstr ""
 msgid "Календарь заявок"
 msgstr ""
 
-#: templates/admin_users.html:3 templates/base.html:26
+#: templates/admin_users.html:3 templates/base.html:73
 msgid "Пользователи"
 msgstr ""
 
@@ -243,52 +231,56 @@ msgstr ""
 msgid "Удалить"
 msgstr ""
 
-#: templates/base.html:6 templates/base.html:17
+#: templates/base.html:7 templates/base.html:64
 msgid "Portal"
 msgstr ""
 
-#: templates/base.html:16
+#: templates/base.html:63
 msgid "Логотип университета"
 msgstr ""
 
-#: templates/base.html:19
+#: templates/base.html:66
 msgid "Автор: Байболатова Гүлсезім & Жакин Айбек & Тлекшиева Эльнара, ВТКО 401"
 msgstr ""
 
-#: templates/base.html:22
+#: templates/base.html:69
 msgid "Заявки"
 msgstr ""
 
-#: templates/base.html:23
+#: templates/base.html:70
 msgid "История"
 msgstr ""
 
-#: templates/base.html:25
+#: templates/base.html:72
 msgid "Отчёты"
 msgstr ""
 
-#: templates/base.html:28 templates/employee.html:6
+#: templates/base.html:75 templates/employee.html:6
 msgid "Подать заявку"
 msgstr ""
 
-#: templates/base.html:29
+#: templates/base.html:76
 msgid "Мои заявки"
 msgstr ""
 
-#: templates/base.html:31
+#: templates/base.html:78
 msgid "Профиль"
 msgstr ""
 
-#: templates/base.html:32 templates/edit_profile.html:17
+#: templates/base.html:79 templates/edit_profile.html:17
 msgid "Выйти"
 msgstr ""
 
-#: templates/base.html:34
+#: templates/base.html:81
 msgid "ru"
 msgstr ""
 
-#: templates/base.html:35
+#: templates/base.html:82
 msgid "kz"
+msgstr ""
+
+#: templates/base.html:109
+msgid "Связаться с нами"
 msgstr ""
 
 #: templates/create_profile.html:3 templates/create_profile.html:6
@@ -558,4 +550,306 @@ msgstr ""
 #: templates/select_role.html:12
 msgid " Администратор"
 msgstr ""
+
+#: venv/Lib/site-packages/click/_termui_impl.py:556
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: venv/Lib/site-packages/click/_termui_impl.py:560
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:1124
+msgid "Aborted!"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:1349
+#: venv/Lib/site-packages/click/core.py:1379
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:1396
+msgid "Options"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:1422
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: venv/Lib/site-packages/click/core.py:1438
+#, python-brace-format
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:1645
+msgid "Commands"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:1677
+msgid "Missing command."
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:1755
+#, python-brace-format
+msgid "No such command {name!r}."
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:2313
+msgid "Value must be an iterable."
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:2334
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: venv/Lib/site-packages/click/core.py:2783
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:2813
+msgid "(dynamic)"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:2828
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/core.py:2841
+msgid "required"
+msgstr ""
+
+#: venv/Lib/site-packages/click/decorators.py:457
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: venv/Lib/site-packages/click/decorators.py:520
+msgid "Show the version and exit."
+msgstr ""
+
+#: venv/Lib/site-packages/click/decorators.py:541
+msgid "Show this message and exit."
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:49
+#: venv/Lib/site-packages/click/exceptions.py:88
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:80
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:129
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:131
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:187
+msgid "Missing argument"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:189
+msgid "Missing option"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:191
+msgid "Missing parameter"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:193
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:200
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:220
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:232
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: venv/Lib/site-packages/click/exceptions.py:270
+msgid "unknown error"
+msgstr ""
+
+#: venv/Lib/site-packages/click/exceptions.py:277
+#, python-brace-format
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/parser.py:233
+#, python-brace-format
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: venv/Lib/site-packages/click/parser.py:415
+#, python-brace-format
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: venv/Lib/site-packages/click/parser.py:476
+#, python-brace-format
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: venv/Lib/site-packages/click/shell_completion.py:326
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: venv/Lib/site-packages/click/shell_completion.py:333
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:158
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:174
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:176
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:187
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:243
+msgid "Error: invalid input"
+msgstr ""
+
+#: venv/Lib/site-packages/click/termui.py:773
+msgid "Press any key to continue..."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:267
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:299
+#, python-brace-format
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: venv/Lib/site-packages/click/types.py:393
+#, python-brace-format
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: venv/Lib/site-packages/click/types.py:415
+#, python-brace-format
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:471
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:612
+#, python-brace-format
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:636
+#, python-brace-format
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:826
+msgid "file"
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:828
+msgid "directory"
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:830
+msgid "path"
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:881
+#, python-brace-format
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:890
+#, python-brace-format
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:898
+#, python-brace-format
+msgid "{name} {filename!r} is a directory."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:907
+#, python-brace-format
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:916
+#, python-brace-format
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:925
+#, python-brace-format
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: venv/Lib/site-packages/click/types.py:992
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
