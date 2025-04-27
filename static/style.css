@@ -130,7 +130,7 @@ button, .btn, .styled-btn, .compact-btn {
     overflow: hidden;
     position: relative;
     width: 950px;
-    height: 1000px;
+    min-height: 1100px;
     margin: 20px;
 }
 
@@ -377,7 +377,7 @@ form {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: linear-gradient(135deg, #6c63ff, #7494ec);
+    background: linear-gradient(135deg, #9c67ff, #87b7f2);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;

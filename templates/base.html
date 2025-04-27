@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="{{ g.get('locale', 'ru') }}">
 <head>
+    <link rel="shortcut icon" href="static/logo.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ _('Portal') }}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #000000;
+        }
+        .container {
+            flex: 1;
+            padding: 10px;
+        }
+        footer {
+            background: linear-gradient(135deg, #9c67ff, #87b7f2);
+            text-align: center;
+            padding: 10px 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-profiles {
+            display: flex;
+            gap: 10px;
+            font-size: 0.85rem;
+        }
+        .footer-profile {
+            text-align: center;
+        }
+        .footer-profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .footer-profile p {
+            margin: 5px 0;
+            font-size: 12px;
+        }
+        .footer-contact {
+            font-size: 14px;
+            color: #555;
+            font-size: 10px;
+        }
+    </style>
 </head>
-<body style="font-family: 'Roboto', sans-serif; font-size: 16px; color: #000000; margin: 0;">
+<body>
 
     <!-- Navigation Bar -->
     <nav class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #f8f9fc;">
@@ -37,9 +85,35 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container" style="padding: 20px; min-height: 85vh;">
+    <div class="container">
         {% block content %}{% endblock %}
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-profiles">
+            <div class="footer-profile">
+                <img src="{{ url_for('static', filename='gul.jpg') }}" alt="Байболатова Гүлсезім">
+                <p>Байболатова Гүлсезім</p>
+            </div>
+            <div class="footer-profile">
+                <img src="{{ url_for('static', filename='aib.jpg') }}" alt="Жакин Айбек">
+                <p>Жакин Айбек</p>
+            </div>
+            <div class="footer-profile">
+                <img src="{{ url_for('static', filename='el.jpg') }}" alt="Тлекшиева Эльнара">
+                <p>Тлекшиева Эльнара</p>
+            </div>
+        </div>
+        <section class="footer-contact">
+            <h3>{{ _('Связаться с нами') }}</h3>
+            <p>Если у вас есть вопросы или предложения, не стесняйтесь обращаться к нам. Мы всегда на связи и готовы помочь!</p>
+            <ul>
+                <li>Email: <a href="mailto:sdtrio@email.com">sdtrio@email.com</a></li>
+            </ul>
+        </section>
+        
+    </footer>
 
 </body>
 </html>

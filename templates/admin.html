@@ -4,9 +4,8 @@
 
 {% block content %}
 <h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">{{ _('Панель управления') }}</h1>
-
 <!-- Панель фильтров -->
-<form id="filter-form" style="display: flex; gap: 15px; margin-bottom: 20px; align-items: center;">
+<form id="filter-form" style="display: flex;  gap: 15px; margin-bottom: 20px; align-items: center;">
     <select id="filter-type" class="input-box styled-dropdown" style="flex: 1;">
         <option value="">{{ _('Все типы') }}</option>
         <option value="Картридж Canon 737">{{ _('Картридж Canon 737') }}</option>
@@ -46,7 +45,7 @@
 <!-- Список заявок -->
 <div class="scrollable-section" style="flex: 1; overflow-y: auto; padding-right: 10px;">
     <h2 style="margin-bottom: 20px; color: #333;">{{ _('Список заявок') }}</h2>
-    <div id="request-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; padding: 10px; max-height: 90vh; overflow-y: auto;">
+    <div id="request-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
         {% if zayavki %}
             {% for z in zayavki %}
             <div class="card {% if z.urgent %}urgent{% endif %}" 
@@ -81,10 +80,10 @@
                 <form method="POST" action="/update_status">
                     <input type="hidden" name="id" value="{{ z.id }}">
                     <div class="status-buttons" style="display: flex; gap: 10px; margin-top: 10px;">
-                        <button name="action" value="сделано" class="btn compact-btn" style="background: #1cc88a;">✔ {{ _('Сделано') }}</button>
-                        <button name="action" value="ожидает" class="btn compact-btn" style="background: #f6c23e;">⌛ {{ _('Ожидание') }}</button>
-                        <button name="action" value="отклонено" class="btn compact-btn" style="background: #e74a3b;">✖ {{ _('Отказ') }}</button>
-                        <button name="action" value="неизвестно" class="btn compact-btn" style="background: #858796;">? {{ _('Неясно') }}</button>
+                        <button name="action" value="сделано" class="btn compact-btn" style="background: #1cc88a;">✔</button>
+                        <button name="action" value="ожидает" class="btn compact-btn" style="background: #f6c23e;">⌛</button>
+                        <button name="action" value="отклонено" class="btn compact-btn" style="background: #e74a3b;">✖</button>
+                        <button name="action" value="неизвестно" class="btn compact-btn" style="background: #858796;">?</button>
                     </div>
                 </form>
                 

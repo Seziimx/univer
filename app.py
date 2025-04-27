@@ -16,6 +16,7 @@ import tempfile
 import shutil
 from functools import wraps
 from flask_frozen import Freezer  # Исправлено на flask_frozen
+import requests  # Import for sending Telegram messages
 
 from models import db, User, Zayavka
 from utils import generate_word_report, generate_pdf_report
@@ -58,6 +59,20 @@ google = oauth.register(
 )
 
 freezer = Freezer(app)  # Initialize Freezer
+
+# Telegram Bot Configuration
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')  # Add your bot token to .env
+TELEGRAM_ADMIN_CHAT_ID = os.getenv('TELEGRAM_ADMIN_CHAT_ID')  # Admin chat ID
+TELEGRAM_EMPLOYEE_CHAT_ID_TEMPLATE = "employee_{user_id}"  # Template for employee chat IDs
+
+def send_telegram_message(chat_id, message):
+    """Send a message to a Telegram chat."""
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    payload = {"chat_id": chat_id, "text": message, "parse_mode": "HTML"}
+    try:
+        requests.post(url, json=payload)
+    except Exception as e:
+        app.logger.error(f"Failed to send Telegram message: {e}")
 
 # Role-based access control decorator
 def role_required(role):
@@ -253,6 +268,12 @@ def send():
     )
     db.session.add(z)
     db.session.commit()
+
+    # Notify admin about the new request
+    user = User.query.get(session['user_id'])  # Fetch the user's full name
+    admin_message = f"📥 Новая заявка:\n<b>Тип:</b> {z.type}\n<b>Описание:</b> {z.description}\n<b>Сотрудник:</b> {user.full_name}"
+    send_telegram_message(TELEGRAM_ADMIN_CHAT_ID, admin_message)
+
     return redirect(url_for('employee'))
 
 @app.route('/uploads/<filename>')
@@ -330,6 +351,13 @@ def update_status():
     new_status = request.form['action'].lower()  # Normalize status to lowercase
     z.set_status(new_status)  # Use the set_status method to enforce lowercase
     db.session.commit()
+
+    # Notify employee about the status change
+    if new_status == 'сделано':
+        employee_chat_id = TELEGRAM_EMPLOYEE_CHAT_ID_TEMPLATE.format(user_id=z.user_id)
+        employee_message = f"✅ Ваша заявка <b>{z.type}</b> выполнена. Вы можете её забрать."
+        send_telegram_message(employee_chat_id, employee_message)
+
     return redirect(url_for('admin'))
 
 def save_to_excel(zayavka, filename):
