@@ -1,50 +1,50 @@
 {% extends "base.html" %}
 
-{% block title %}{{ _('Admin Panel') }}{% endblock %}
+{% block title %}Admin Panel{% endblock %}
 
 {% block content %}
-<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">{{ _('Панель управления') }}</h1>
+<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">Панель управления</h1>
 <!-- Панель фильтров -->
 <form id="filter-form" style="display: flex;  gap: 15px; margin-bottom: 20px; align-items: center;">
     <select id="filter-type" class="input-box styled-dropdown" style="flex: 1;">
-        <option value="">{{ _('Все типы') }}</option>
-        <option value="Картридж Canon 737">{{ _('Картридж Canon 737') }}</option>
-        <option value="HDMI сплитер 4-1 с переключателем">{{ _('HDMI сплитер 4-1 с переключателем') }}</option>
-        <option value="SSD Kingston SA400S37 480 Gb">{{ _('SSD Kingston SA400S37 480 Gb') }}</option>
-        <option value="USB Flash карта Kingston DTXM/256 GB">{{ _('USB Flash карта Kingston DTXM/256 GB') }}</option>
-        <option value="Мышь проводная Logitech B100">{{ _('Мышь проводная Logitech B100') }}</option>
-        <option value="Монитор Samsung 24">{{ _('Монитор Samsung 24"') }}</option>
-        <option value="Веб-камера Logitech C270">{{ _('Веб-камера Logitech C270') }}</option>
-        <option value="Наушники с микрофоном Defender">{{ _('Наушники с микрофоном Defender') }}</option>
-        <option value="Проектор ViewSonic">{{ _('Проектор ViewSonic') }}</option>
-        <option value="Картридж HP CF283A (83A)">{{ _('Картридж HP CF283A (83A)') }}</option>
-        <option value="Чип для картриджа HP 83A">{{ _('Чип для картриджа HP 83A') }}</option>
-        <option value="Клавиатура Smartbuy ONE 101">{{ _('Клавиатура Smartbuy ONE 101') }}</option>
-        <option value="Универсальная зарядка для ноутбуков">{{ _('Универсальная зарядка для ноутбуков') }}</option>
-        <option value="Принтер Brother HL-L2365">{{ _('Принтер Brother HL-L2365') }}</option>
-        <option value="Сетевой фильтр 5 розеток">{{ _('Сетевой фильтр 5 розеток') }}</option>
-        <option value="Кабель HDMI 1.5м">{{ _('Кабель HDMI 1.5м') }}</option>
-        <option value="Кабель USB–microUSB">{{ _('Кабель USB–microUSB') }}</option>
-        <option value="Папка для документов A4">{{ _('Папка для документов A4') }}</option>
-        <option value="Блок питания ATX 500W">{{ _('Блок питания ATX 500W') }}</option>
-        <option value="Роутер TP-Link Archer C20">{{ _('Роутер TP-Link Archer C20') }}</option>
-        <option value="Оборудование">{{ _('Оборудование') }}</option>
-        <option value="Ремонт">{{ _('Ремонт') }}</option>
+        <option value="">Все типы</option>
+        <option value="Картридж Canon 737">Картридж Canon 737</option>
+        <option value="HDMI сплитер 4-1 с переключателем">HDMI сплитер 4-1 с переключателем</option>
+        <option value="SSD Kingston SA400S37 480 Gb">SSD Kingston SA400S37 480 Gb</option>
+        <option value="USB Flash карта Kingston DTXM/256 GB">USB Flash карта Kingston DTXM/256 GB</option>
+        <option value="Мышь проводная Logitech B100">Мышь проводная Logitech B100</option>
+        <option value="Монитор Samsung 24">Монитор Samsung 24"</option>
+        <option value="Веб-камера Logitech C270">Веб-камера Logitech C270</option>
+        <option value="Наушники с микрофоном Defender">Наушники с микрофоном Defender</option>
+        <option value="Проектор ViewSonic">Проектор ViewSonic</option>
+        <option value="Картридж HP CF283A (83A)">Картридж HP CF283A (83A)</option>
+        <option value="Чип для картриджа HP 83A">Чип для картриджа HP 83A</option>
+        <option value="Клавиатура Smartbuy ONE 101">Клавиатура Smartbuy ONE 101</option>
+        <option value="Универсальная зарядка для ноутбуков">Универсальная зарядка для ноутбуков</option>
+        <option value="Принтер Brother HL-L2365">Принтер Brother HL-L2365</option>
+        <option value="Сетевой фильтр 5 розеток">Сетевой фильтр 5 розеток</option>
+        <option value="Кабель HDMI 1.5м">Кабель HDMI 1.5м</option>
+        <option value="Кабель USB–microUSB">Кабель USB–microUSB</option>
+        <option value="Папка для документов A4">Папка для документов A4</option>
+        <option value="Блок питания ATX 500W">Блок питания ATX 500W</option>
+        <option value="Роутер TP-Link Archer C20">Роутер TP-Link Archer C20</option>
+        <option value="Оборудование">Оборудование</option>
+        <option value="Ремонт">Ремонт</option>
     </select>
     <select id="filter-status" class="input-box styled-dropdown" style="flex: 1;">
-        <option value="">{{ _('Все статусы') }}</option>
-        <option value="ожидает">{{ _('Ожидает') }}</option>
-        <option value="сделано">{{ _('Сделано') }}</option>
-        <option value="отклонено">{{ _('Отклонено') }}</option>
-        <option value="неизвестно">{{ _('Неизвестно') }}</option>
+        <option value="">Все статусы</option>
+        <option value="ожидает">Ожидает</option>
+        <option value="сделано">Сделано</option>
+        <option value="отклонено">Отклонено</option>
+        <option value="неизвестно">Неизвестно</option>
     </select>
-    <input id="filter-query" type="text" placeholder="{{ _('Поиск...') }}" class="input-box styled-input" style="flex: 2;">
-    <button type="button" id="apply-filters" class="btn styled-btn" style="width: 173px; height: 44px; font-size: 16px; border-radius: 8px;">{{ _('Применить') }}</button>
+    <input id="filter-query" type="text" placeholder="Поиск..." class="input-box styled-input" style="flex: 2;">
+    <button type="button" id="apply-filters" class="btn styled-btn" style="width: 173px; height: 44px; font-size: 16px; border-radius: 8px;">Применить</button>
 </form>
 
 <!-- Список заявок -->
 <div class="scrollable-section" style="flex: 1; overflow-y: auto; padding-right: 10px;">
-    <h2 style="margin-bottom: 20px; color: #333;">{{ _('Список заявок') }}</h2>
+    <h2 style="margin-bottom: 20px; color: #333;">Список заявок</h2>
     <div id="request-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
         {% if zayavki %}
             {% for z in zayavki %}
@@ -56,27 +56,27 @@
                  data-fullname="{{ z.user.full_name | lower }}">
                 <h3 style="color: #000;">{{ z.type }}</h3>
                 <p style="color: #555;">{{ z.description }}</p>
-                <p><strong>{{ _('Дата:') }}</strong> <span style="color: #555;">{{ z.created_at.strftime('%d.%m.%Y %H:%M') }}</span></p>
-                <p><strong>{{ _('Статус:') }}</strong>
+                <p><strong>Дата:</strong> <span style="color: #555;">{{ z.created_at.strftime('%d.%m.%Y %H:%M') }}</span></p>
+                <p><strong>Статус:</strong>
                     {% if z.status == 'сделано' %}
-                    <span style="color: green;">{{ _('Сделано') }} ✅</span>
+                    <span style="color: green;">Сделано ✅</span>
                     {% elif z.status == 'ожидает' %}
-                    <span style="color: orange;">{{ _('Ожидает') }} 🟡</span>
+                    <span style="color: orange;">Ожидает 🟡</span>
                     {% elif z.status == 'отклонено' %}
-                    <span style="color: red;">{{ _('Отклонено') }} 🔴</span>
+                    <span style="color: red;">Отклонено 🔴</span>
                     {% else %}
-                    <span style="color: gray;">{{ _('Неизвестно') }}</span>
+                    <span style="color: gray;">Неизвестно</span>
                     {% endif %}
                 </p>
-                <p><strong>{{ _('Факультет:') }}</strong> <span style="color: #555;">{{ z.user.faculty }}</span></p>
-                <p><strong>{{ _('Файл:') }}</strong>
+                <p><strong>Факультет:</strong> <span style="color: #555;">{{ z.user.faculty }}</span></p>
+                <p><strong>Файл:</strong>
                     {% if z.file %}
-                        <a href="{{ url_for('uploaded_file', filename=z.file) }}" target="_blank" style="color: #007bff;">{{ _('Скачать') }}</a>
+                        <a href="{{ url_for('uploaded_file', filename=z.file) }}" target="_blank" style="color: #007bff;">Скачать</a>
                     {% else %}
-                        <span style="color: #555;">{{ _('Нет файла') }}</span>
+                        <span style="color: #555;">Нет файла</span>
                     {% endif %}
                 </p>
-                <p><strong>{{ _('Кто оставил заявку:') }}</strong> <span style="color: #555;">{{ z.user.username }}</span></p>
+                <p><strong>Кто оставил заявку:</strong> <span style="color: #555;">{{ z.user.username }}</span></p>
                 <form method="POST" action="/update_status">
                     <input type="hidden" name="id" value="{{ z.id }}">
                     <div class="status-buttons" style="display: flex; gap: 10px; margin-top: 10px;">
@@ -95,7 +95,7 @@
             </div>
             {% endfor %}
         {% else %}
-            <p style="text-align: center; color: #888; font-size: 18px;">🔍 {{ _('Заявки не найдены.') }}</p>
+            <p style="text-align: center; color: #888; font-size: 18px;">🔍 Заявки не найдены.</p>
         {% endif %}
     </div>
 </div>

@@ -1,30 +1,30 @@
 {% extends "base.html" %}
 
-{% block title %}{{ _('История завершённых заявок') }}{% endblock %}
+{% block title %}История завершённых заявок{% endblock %}
 
 {% block content %}
-<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">{{ _('История завершённых заявок') }}</h1>
+<h1 style="text-align: center; font-family: 'Kaushan Script', cursive; margin-bottom: 20px;">История завершённых заявок</h1>
 <div class="scrollable-section" style="flex: 1; overflow-y: auto; padding-right: 10px;">
-    <h2 style="margin-bottom: 20px;">{{ _('Список завершённых заявок') }}</h2>
+    <h2 style="margin-bottom: 20px;">Список завершённых заявок</h2>
     <div id="request-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
         {% for z in zayavki %}
         <div class="card">
             <h3>{{ z.type }}</h3>
             <p>{{ z.description }}</p>
-            <p><strong>{{ _('Дата:') }}</strong> {{ z.created_at.strftime('%d.%m.%Y %H:%M') }}</p>
-            <p><strong>{{ _('Статус:') }}</strong> {{ z.status }}</p>
-            <p><strong>{{ _('Факультет:') }}</strong> {{ z.user.faculty }}</p>
-            <p><strong>{{ _('Кто оставил заявку:') }}</strong> {{ z.user.username }}</p>
+            <p><strong>Дата:</strong> {{ z.created_at.strftime('%d.%m.%Y %H:%M') }}</p>
+            <p><strong>Статус:</strong> {{ z.status }}</p>
+            <p><strong>Факультет:</strong> {{ z.user.faculty }}</p>
+            <p><strong>Кто оставил заявку:</strong> {{ z.user.username }}</p>
             {% if z.comment %}
             <div class="comments-section" style="margin-top: 15px; max-height: 100px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; padding: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                <p style="font-size: 14px; color: #555;"><strong>{{ _('Комментарий сотрудника:') }}</strong> {{ z.comment }}</p>
+                <p style="font-size: 14px; color: #555;"><strong>Комментарий сотрудника:</strong> {{ z.comment }}</p>
             </div>
             {% endif %}
         </div>
         {% endfor %}
     </div>
     <div id="no-requests" style="display: none; text-align: center; color: #888; font-size: 18px; margin-top: 20px;">
-        🔍 {{ _('Заявки не найдены. Попробуйте изменить фильтры или сбросить поиск.') }}
+        🔍 Заявки не найдены. Попробуйте изменить фильтры или сбросить поиск.
     </div>
 </div>
 {% endblock %}

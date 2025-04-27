@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ _('Login/Signup Form') }}</title>
+    <title>Login/Signup Form</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -18,23 +18,23 @@
     <div class="container">
         <div class="form-box login">
             <form action="/login" method="POST">
-                <h1>{{ _('Вход') }}</h1>
+                <h1>Вход</h1>
                 {% if login_error %}
                 <p style="color: red; font-size: 14px; margin-bottom: 10px;">{{ login_error }}</p>
                 {% endif %}
                 <div class="input-box">
-                    <input type="text" name="username" placeholder="{{ _('Имя пользователя') }}" required>
+                    <input type="text" name="username" placeholder="Имя пользователя" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="{{ _('Пароль') }}" required>
+                    <input type="password" name="password" placeholder="Пароль" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="forgot-link">
-                    <a href="{{ url_for('forgot_password') }}">{{ _('Забыли пароль?') }}</a>
+                    <a href="{{ url_for('forgot_password') }}">Забыли пароль?</a>
                 </div>
-                <button type="submit" class="btn">{{ _('Войти') }}</button>
-                <p>{{ _('или войдите через соцсети') }}</p>
+                <button type="submit" class="btn">Войти</button>
+                <p>или войдите через соцсети</p>
                 <div class="social-icons">
                     <a href="{{ url_for('login_google') }}"><i class='bx bxl-google'></i></a>
                     <a href="https://www.facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
@@ -46,45 +46,45 @@
 
         <div class="form-box register">
             <form action="/register" method="POST" enctype="multipart/form-data">
-                <h1>{{ _('Регистрация') }}</h1>
+                <h1>Регистрация</h1>
                 <div class="input-box">
-                    <input type="text" name="username" placeholder="{{ _('Имя пользователя') }}" required>
+                    <input type="text" name="username" placeholder="Имя пользователя" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" name="email" placeholder="{{ _('Электронная почта') }}" required>
+                    <input type="email" name="email" placeholder="Электронная почта" required>
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="{{ _('Пароль') }}" required>
+                    <input type="password" name="password" placeholder="Пароль" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="full_name" placeholder="{{ _('ФИО') }}" required>
+                    <input type="text" name="full_name" placeholder="ФИО" required>
                     <i class='bx bxs-user-detail'></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="faculty" placeholder="{{ _('Факультет') }}" required>
+                    <input type="text" name="faculty" placeholder="Факультет" required>
                     <i class='bx bxs-school'></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="position" placeholder="{{ _('Должность') }}" required>
+                    <input type="text" name="position" placeholder="Должность" required>
                     <i class='bx bxs-briefcase'></i>
                 </div>
                 <div class="input-box file-input">
                     <input type="file" id="photo" name="photo" accept="image/*">
-                    <label for="photo"><i class='bx bxs-camera'></i> {{ _('Загрузить фото') }}</label>
+                    <label for="photo"><i class='bx bxs-camera'></i> Загрузить фото</label>
                 </div>
                 <div class="input-box">
-                    <label for="role"><i class='bx bxs-user'></i> {{ _('Выберите роль') }}</label>
+                    <label for="role"><i class='bx bxs-user'></i> Выберите роль</label>
                     <select id="role" name="role" class="styled-dropdown" required>
-                        <option value="" disabled selected>{{ _('Выберите вашу роль') }}</option>
-                        <option value="employee">{{ _('Сотрудник') }}</option>
-                        <option value="admin">{{ _('Администратор') }}</option>
+                        <option value="" disabled selected>Выберите вашу роль</option>
+                        <option value="employee">Сотрудник</option>
+                        <option value="admin">Администратор</option>
                     </select>
                 </div>
-                <button type="submit" class="btn">{{ _('Зарегистрироваться') }}</button>
-                <p>{{ _('или зарегистрируйтесь через соцсети') }}</p>
+                <button type="submit" class="btn">Зарегистрироваться</button>
+                <p>или зарегистрируйтесь через соцсети</p>
                 <div class="social-icons">
                     <a href="{{ url_for('login_google') }}"><i class='bx bxl-google'></i></a>
                     <a href="https://www.facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
@@ -96,15 +96,15 @@
 
         <div class="toggle-box">
             <div class="toggle-panel toggle-left">
-                <h1 style="font-weight: bold; font-size: 36px;">{{ _('ЗДРАВСТВУЙТЕ!') }}</h1>
-                <p>{{ _('Нет аккаунта?') }}</p>
-                <button class="btn register-btn">{{ _('Регистрация') }}</button>
+                <h1 style="font-weight: bold; font-size: 36px;">ЗДРАВСТВУЙТЕ!</h1>
+                <p>Нет аккаунта?</p>
+                <button class="btn register-btn">Регистрация</button>
             </div>
 
             <div class="toggle-panel toggle-right">
-                <h1 style="font-weight: bold; font-size: 36px;">{{ _('ДОБРО ПОЖАЛОВАТЬ!') }}</h1>
-                <p>{{ _('Уже есть аккаунт?') }}</p>
-                <button class="btn login-btn">{{ _('Вход') }}</button>
+                <h1 style="font-weight: bold; font-size: 36px;">ДОБРО ПОЖАЛОВАТЬ!</h1>
+                <p>Уже есть аккаунт?</p>
+                <button class="btn login-btn">Вход</button>
             </div>
         </div>
     </div>

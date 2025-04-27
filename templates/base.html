@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ g.get('locale', 'ru') }}">
+<html lang="ru">
 <head>
     <link rel="shortcut icon" href="static/logo.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ _('Portal') }}{% endblock %}</title>
+    <title>{% block title %}Portal{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -60,26 +60,26 @@
     <!-- Navigation Bar -->
     <nav class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #f8f9fc;">
         <div class="nav-left" style="display: flex; align-items: center; gap: 10px;">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="{{ _('Логотип университета') }}" style="height: 40px;">
-            <div class="logo">{{ _('Portal') }}</div>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Логотип университета" style="height: 40px;">
+            <div class="logo">Portal</div>
         </div>
-        <span style="font-size: 14px; color: #555;">© {{ _('Автор: Байболатова Гүлсезім & Жакин Айбек & Тлекшиева Эльнара, ВТКО 401') }}</span>
+        <span style="font-size: 14px; color: #555;">© Автор: Байболатова Гүлсезім & Жакин Айбек & Тлекшиева Эльнара, ВТКО 401</span>
         <ul class="nav-links" style="list-style: none; display: flex; gap: 15px; align-items: center;">
             {% if session['role'] == 'admin' %}
-                <li><a href="/admin">{{ _('Заявки') }}</a></li>
-                <li><a href="/history">{{ _('История') }}</a></li>
-                <li><a href="/calendar">{{ _('Календарь') }}</a></li>
-                <li><a href="/reports">{{ _('Отчёты') }}</a></li>
-                <li><a href="/users">{{ _('Пользователи') }}</a></li>
+                <li><a href="/admin">Заявки</a></li>
+                <li><a href="/history">История</a></li>
+                <li><a href="/calendar">Календарь</a></li>
+                <li><a href="/reports">Отчёты</a></li>
+                <li><a href="/users">Пользователи</a></li>
             {% elif session['role'] == 'employee' %}
-                <li><a href="/employee">{{ _('Подать заявку') }}</a></li>
-                <li><a href="/my-requests">{{ _('Мои заявки') }}</a></li>
+                <li><a href="/employee">Подать заявку</a></li>
+                <li><a href="/my-requests">Мои заявки</a></li>
             {% endif %}
-            <li><a href="/profile">{{ _('Профиль') }}</a></li>
-            <li><a href="/logout" class="logout-btn">{{ _('Выйти') }}</a></li>
+            <li><a href="/profile">Профиль</a></li>
+            <li><a href="/logout" class="logout-btn">Выйти</a></li>
             <div class="language-switch">
-                <a href="?lang=ru">🇷🇺 {{ _('ru') }}</a> |
-                <a href="?lang=kk">🇰🇿 {{ _('kz') }}</a>
+                <a href="?lang=ru">🇷🇺 ru</a> |
+                <a href="?lang=kk">🇰🇿 kz</a>
             </div>            
         </ul>
     </nav>
@@ -106,7 +106,7 @@
             </div>
         </div>
         <section class="footer-contact">
-            <h3>{{ _('Связаться с нами') }}</h3>
+            <h3>Связаться с нами</h3>
             <p>Если у вас есть вопросы или предложения, не стесняйтесь обращаться к нам. Мы всегда на связи и готовы помочь!</p>
             <ul>
                 <li>Email: <a href="mailto:sdtrio@email.com">sdtrio@email.com</a></li>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ _('Редактировать профиль') }}</title>
+    <title>Редактировать профиль</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
@@ -13,31 +13,31 @@
     <nav class="navbar">
         <div class="logo">Site</div>
         <ul class="nav-links">
-            <li><a href="/profile">{{ _('Мой профиль') }}</a></li>
-            <li><a href="/logout" class="logout-btn">{{ _('Выйти') }}</a></li>
+            <li><a href="/profile">Мой профиль</a></li>
+            <li><a href="/logout" class="logout-btn">Выйти</a></li>
         </ul>
     </nav>
 
     <div class="container" style="padding: 20px; display: flex; justify-content: center; align-items: center; height: 90vh;">
         <form method="POST" action="/profile/edit" enctype="multipart/form-data" style="width: 100%; max-width: 500px; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
-            <h1 style="text-align: center; margin-bottom: 20px;">{{ _('Редактировать профиль') }}</h1>
+            <h1 style="text-align: center; margin-bottom: 20px;">Редактировать профиль</h1>
             <div class="input-box">
-                <label for="full_name">📛 {{ _('ФИО:') }}</label>
+                <label for="full_name">📛 ФИО:</label>
                 <input type="text" id="full_name" name="full_name" value="{{ user.full_name }}" class="styled-input" required>
             </div>
             <div class="input-box">
-                <label for="faculty">🏛 {{ _('Факультет:') }}</label>
+                <label for="faculty">🏛 Факультет:</label>
                 <input type="text" id="faculty" name="faculty" value="{{ user.faculty }}" class="styled-input">
             </div>
             <div class="input-box">
-                <label for="position">🧑‍💼 {{ _('Должность:') }}</label>
+                <label for="position">🧑‍💼 Должность:</label>
                 <input type="text" id="position" name="position" value="{{ user.position }}" class="styled-input">
             </div>
             <div class="input-box file-input">
-                <label for="photo"><i class='bx bxs-camera'></i> {{ _('Загрузить фото:') }}</label>
+                <label for="photo"><i class='bx bxs-camera'></i> Загрузить фото:</label>
                 <input type="file" id="photo" name="photo" accept="image/*">
             </div>
-            <button type="submit" class="btn styled-btn" style="width: 100%;">{{ _('Сохранить изменения') }}</button>
+            <button type="submit" class="btn styled-btn" style="width: 100%;">Сохранить изменения</button>
         </form>
     </div>
 
