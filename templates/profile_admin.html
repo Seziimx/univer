@@ -5,8 +5,12 @@
 {% block content %}
 <div style="padding: 20px; display: flex; justify-content: center; align-items: center; height: 90vh;">
     <div class="profile-card">
-        <div class="profile-photo">
-            <img src="{{ url_for('static', filename='uploads/' + user.photo) if user.photo else url_for('static', filename='default-profile.png') }}" alt="Фото профиля">
+        <div class="profile-photo" style="text-align: center; margin-bottom: 20px;">
+            {% if user.photo %}
+                <img src="{{ url_for('uploaded_file', filename=user.photo) }}" alt="Profile Photo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+            {% else %}
+                <p>Фото не загружено</p>
+            {% endif %}
         </div>
         <h2 class="profile-name">{{ user.full_name }}</h2>
         <p class="profile-field"><i class='bx bxs-school'></i> Факультет: {{ user.faculty }}</p>

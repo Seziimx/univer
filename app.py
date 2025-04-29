@@ -617,8 +617,8 @@ def profile():
         if photo and photo.filename != '':
             photo_filename = secure_filename(photo.filename)
             photo_path = os.path.join(app.config['UPLOAD_FOLDER'], photo_filename)
-            photo.save(photo_path)
-            user.photo = photo_filename
+            photo.save(photo_path)  # Save the photo to the uploads folder
+            user.photo = photo_filename  # Save the filename in the database
         db.session.commit()
         return redirect(url_for('profile'))
     return render_template('profile_admin.html', user=user) if user.role == 'admin' else render_template('profile_employee.html', user=user)
