@@ -970,12 +970,12 @@ body {
         font-size: 14px;
         padding: 10px;
     }
-
-    .mobile-switcher {
-        display: none;
-    }
 }
 
+/* Скрывать на больших экранах */
+.mobile-switcher {
+    display: none;
+}
 @media screen and (max-width: 480px) {
     /* Navbar Logo */
     .navbar .logo {
@@ -1014,11 +1014,11 @@ body {
     
         /* Показываем одну форму, скрываем другую */
         .form-box {
-            display: none !important;
-            position: static !important;
-            width: 100% !important;
-            height: auto !important;
-            padding: 20px 15px !important;
+        display: none !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 20px 15px !important;
         }
     
         .form-box.show {
@@ -1026,14 +1026,14 @@ body {
             flex-direction: column;
         }
     
-        .container {
-            display: block !important;
-            width: 100% !important;
-            min-height: 100vh !important;
-            padding: 0 !important;
+    .container {
+        display: block !important;
+        width: 100% !important;
+         min-height: 100vh !important;
+        padding: 0 !important;
 }
 
-.mobile-switcher {
+    .mobile-switcher {
     display: flex;
     justify-content: center;
     gap: 10px;
