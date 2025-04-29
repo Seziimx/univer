@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+<!-- <style> */
+    html, body {*/
+        overflow-x: hidden;
+    }
+</style>*/-->
+
+
+<!-- <head> -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +25,10 @@
         <input type="checkbox" id="theme-toggle-checkbox">   
     </div>
     <div class="container">
+        <div class="mobile-switcher">
+            <button class="btn login-btn">Вход</button>
+            <button class="btn register-btn">Регистрация</button>
+        </div>        
         <div class="form-box login">
             <form action="/login" method="POST">
                 <h1>Вход</h1>
@@ -43,7 +56,7 @@
                 </div>
             </form>
         </div>
-
+  
         <div class="form-box register">
             <form action="/register" method="POST" enctype="multipart/form-data">
                 <h1>Регистрация</h1>

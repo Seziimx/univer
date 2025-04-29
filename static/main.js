@@ -122,3 +122,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Только если ширина экрана ≤ 480px
+    if (window.innerWidth <= 480) {
+        const loginBtn = document.querySelector('.login-btn');
+        const registerBtn = document.querySelector('.register-btn');
+        const loginForm = document.querySelector('.form-box.login');
+        const registerForm = document.querySelector('.form-box.register');
+
+        // Показать логин по умолчанию
+        loginForm?.classList.add('show');
+        registerForm?.classList.remove('show');
+
+        // Обработчики
+        loginBtn?.addEventListener('click', () => {
+            loginForm?.classList.add('show');
+            registerForm?.classList.remove('show');
+        });
+
+        registerBtn?.addEventListener('click', () => {
+            registerForm?.classList.add('show');
+            loginForm?.classList.remove('show');
+        });
+    }
+});

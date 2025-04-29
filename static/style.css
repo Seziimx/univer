@@ -802,7 +802,9 @@ body {
 
 @media screen and (max-width: 650px) {
     .container {
-        height: calc(100vh - 40px);
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 40px;
     }
 
     .form-box {
@@ -850,39 +852,204 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .navbar {
+    .container {
+      width: 95%;
+      min-height: auto;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 20px;
+    }
+    footer {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
     }
 
-    .nav-links {
+    .footer-profiles {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-profile img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .footer-contact {
+        font-size: 12px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #request-list {
+      grid-template-columns: 1fr;
+    }
+  
+
+    .navbar .nav-links {
         flex-direction: column;
         gap: 10px;
     }
 
-    .container {
+    footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: linear-gradient(135deg, #9c67ff, #87b7f2);
+        box-sizing: border-box;
+    }
+    
+    .footer-profiles {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .footer-profile img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .footer-contact {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    /* Forms */
+    form {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .input-box, .btn {
+        font-size: 14px;
+    }
+
+    .input-box input, .input-box select, .styled-textarea {
+        font-size: 14px;
         padding: 10px;
     }
 
+    /* Tables */
+    table {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    /* Cards */
     .card {
         padding: 15px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .navbar .logo {
-        font-size: 20px;
+        font-size: 14px;
     }
 
+    /* Request List */
+    #request-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+    /* Calendar */
+    #calendar {
+        padding: 10px;
+    }
+
+    /* Modals */
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    /* Buttons */
     .btn {
         font-size: 14px;
         padding: 10px;
     }
 
-    .card {
-        font-size: 14px;
+    .mobile-switcher {
+        display: none;
     }
 }
+
+@media screen and (max-width: 480px) {
+    /* Navbar Logo */
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    /* Buttons */
+    .btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    /* Cards */
+    .card {
+        font-size: 12px;
+    }
+
+    /* Footer */
+    .footer-contact {
+        font-size: 10px;
+    }
+
+    /* Forms */
+    .input-box input, .input-box select, .styled-textarea {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+
+        /* Отключаем toggle-анимацию только на мобилке */
+        .toggle-box,
+        .toggle-panel,
+        .toggle-box::before {
+            display: none !important;
+        }
+    
+        /* Показываем одну форму, скрываем другую */
+        .form-box {
+            display: none !important;
+            position: static !important;
+            width: 100% !important;
+            height: auto !important;
+            padding: 20px 15px !important;
+        }
+    
+        .form-box.show {
+            display: flex !important;
+            flex-direction: column;
+        }
+    
+        .container {
+            display: block !important;
+            width: 100% !important;
+            min-height: 100vh !important;
+            padding: 0 !important;
+}
+
+.mobile-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.mobile-switcher .btn {
+    flex: 1;
+    font-size: 14px;
+    padding: 10px;
+    background: linear-gradient(135deg, #7494ec, #6c63ff);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+}}
 
 .card {
     opacity: 0;
